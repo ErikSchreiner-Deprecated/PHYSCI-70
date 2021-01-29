@@ -19,6 +19,6 @@ p {
 }
 
 #grad1 {
-	background-color: lavender;
-	background-image: linear-gradient(to right, white, lavender);
+	background-color: oldlace;
+	background-image: linear-gradient(to right, oldlace,  olivedrab);
 }
