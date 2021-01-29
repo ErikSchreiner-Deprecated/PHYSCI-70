@@ -1,10 +1,6 @@
 header {
 	margin: 5px 10px;
-	#grad {
-		background-color: lavender;
-		background-image: linear-gradient(to right, white, lavender);
 	}
-}
 
 nav {
 	margin: 3px 10px;
@@ -20,4 +16,9 @@ p {
 	color: coral;
 	font-family: courier new, monospace;
 	font size: 100%;
+}
+
+#grad1 {
+	background-color: lavender;
+	background-image: linear-gradient(to right, white, lavender);
 }
