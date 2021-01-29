@@ -1,10 +1,19 @@
+heading {
+	margin: 25px 50px;
+}
+
+nav {
+	margin: 25px 50px;
+}
+
 h3 {
-	color: hsl(#41B3A3);
+	color: #41B3A3;
 	font-family: Impact, fantasy;
 	font-size: 200%;
-	}
+}
+
 p {
-	color: hsl(#E27D60);
+	color: #E27D60;
 	font-family: courier new, monospace;
 	font size: 100%;
 }
