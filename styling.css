@@ -1,13 +1,13 @@
-.header {
-	margin: 25px 50px;
-	#grad1 {
+header {
+	margin: 5px 10px;
+	#grad {
 		background-color: lavender;
 		background-image: linear-gradient(to right, white, lavender);
 	}
 }
 
 nav {
-	margin: 25px 50px;
+	margin: 3px 10px;
 }
 
 h3 {
