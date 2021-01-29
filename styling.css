@@ -6,8 +6,14 @@ nav {
 	margin: 3px 10px;
 }
 
-h3 {
+h1 {
 	color: firebrick;
+	font-family: Impact, fantasy;
+	font-size: 200%;
+}
+
+h3 {
+	color: crimson;
 	font-family: Impact, fantasy;
 	font-size: 200%;
 }
