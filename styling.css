@@ -1,6 +1,5 @@
 header {
 	margin: 5px 10px;
-	font-size: 40px;
 }
 
 nav {
@@ -10,7 +9,7 @@ nav {
 h1 {
 	color: firebrick;
 	font-family: Impact, fantasy;
-	font-size: 100%;
+	font-size: 200%;
 }
 
 h3 {
