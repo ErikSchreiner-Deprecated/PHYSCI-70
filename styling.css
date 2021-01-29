@@ -1,5 +1,9 @@
-heading {
+.header {
 	margin: 25px 50px;
+	#grad1 {
+		background-color: lavender;
+		background-image: linear-gradient(to right, white, lavender);
+	}
 }
 
 nav {
@@ -7,13 +11,13 @@ nav {
 }
 
 h3 {
-	color: #41B3A3;
+	color: firebrick;
 	font-family: Impact, fantasy;
 	font-size: 200%;
 }
 
 p {
-	color: #E27D60;
+	color: coral;
 	font-family: courier new, monospace;
 	font size: 100%;
 }
