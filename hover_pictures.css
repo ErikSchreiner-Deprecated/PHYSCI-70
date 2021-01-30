@@ -17,7 +17,7 @@
 	position: absolute;
 	transition: all .3s ease;
 	opacity: 0;
-	background-color: grey;
+	background-color: black;
 }
 
 .hov_overlay_fade {
