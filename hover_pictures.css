@@ -1,6 +1,7 @@
 .hov_img_container {
 	position: relative;
-	width: 100%;
+	width: 200px;
+	height: 200px;
 	/*inline block allows for setting height and width*/
 	display: inline-block; 
 }
@@ -21,6 +22,16 @@
 	background-color: black;
 }
 
+.hov_text {
+	position: absolute;
+	color: white;
+	font-family: Impact, fantasy;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 20px;
+}
+
 .hov_overlay_fade {
 	height: 100%;
 	width: 100%;
@@ -32,14 +43,3 @@
 .hov_img_container:hover .hov_overlay_fade {
 	opacity: 1;
 }
-
-.hov_text {
-	position: absolute;
-	color: white;
-	font-family: Impact, fantasy;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	font-size: 20px;
-}
-
