@@ -1,0 +1,42 @@
+.hov_img_container {
+	position: relative;
+	width: 100%;
+	/*inline block allows for setting height and width*/
+	display: inline-block; 
+}
+
+.hov_image {
+	/*allows to NOT sit next to other images*/
+	display: block;
+	width: 100%;
+}
+
+.hov_overlay {
+	position: absolute;
+	transition: all .3s ease;
+	opacity: 0;
+	background-color: grey;
+}
+
+.container:hover .hov_overlay_fade {
+	opacity: .6;
+}
+
+.hov_overlay_fade {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: grey;
+}
+
+.hov_text {
+	position: absolute;
+	color: white;
+	font-family: Impact, fantasy;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 20px;
+}
+
