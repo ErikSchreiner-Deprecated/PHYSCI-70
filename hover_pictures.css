@@ -1,7 +1,7 @@
 .hov_img_container {
-	position: relative;
+	/*position: relative;*/
 	width: 100%;
-	class: "col-sm-3";
+	position: "col-sm-3";
 	/*inline block allows for setting height and width*/
 	display: inline-block; 
 }
