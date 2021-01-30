@@ -29,7 +29,7 @@
 	background-color: grey;
 }
 
-.hov_overlay:hover .hov_overlay_fade {
+.hov_img_container:hover .hov_overlay_fade {
 	opacity: 1;
 }
 
