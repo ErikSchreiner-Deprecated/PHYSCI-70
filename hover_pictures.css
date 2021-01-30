@@ -42,5 +42,5 @@
 }
 
 .hov_img_container:hover .hov_overlay_fade {
-	opacity: 1;
+	opacity: .8;
 }
