@@ -1,8 +1,8 @@
 .hov_img_container {
 	position: relative;
-	/*width: 100%;
-	inline block allows for setting height and width
-	display: inline-block; */
+	width: 100%;
+	/*inline block allows for setting height and width*/
+	display: inline-block; 
 }
 
 .hov_image {
