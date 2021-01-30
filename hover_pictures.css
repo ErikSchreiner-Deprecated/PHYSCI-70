@@ -1,7 +1,7 @@
 .hov_img_container {
 	position: relative;
 	margin-left:10px;
-	width: 300px;
+	width: 400px;
 	height: 300px;
 	/*inline block allows for setting height and width*/
 	display: inline-block; 
@@ -11,7 +11,7 @@
 	position: absolute;
 	/*allows to NOT sit next to other images*/
 	display: block;
-	width: 300px;
+	width: 400px;
 	height: 300px;
 	opacity: 1;
 }
