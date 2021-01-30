@@ -1,5 +1,6 @@
 .hov_img_container {
 	position: relative;
+	margin-left:10px;
 	width: 200px;
 	height: 200px;
 	/*inline block allows for setting height and width*/
