@@ -1,6 +1,7 @@
 .hov_img_container {
 	position: relative;
 	margin-left:10px;
+	margin-top: 30px;
 	width: 250px;
 	height: 250px;
 	/*inline block allows for setting height and width*/
@@ -16,11 +17,24 @@
 	opacity: 1;
 }
 
-.hov_overlay {
+/*.hov_overlay {
 	position: absolute;
 	transition: all .3s ease;
 	opacity: 0;
 	background-color: black;
+}*/
+
+.hov_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: grey;
 }
 
 .hov_text {
@@ -33,14 +47,14 @@
 	font-size: 20px;
 }
 
-.hov_overlay_fade {
+/*.hov_overlay_fade {
 	height: 100%;
 	width: 100%;
 	top: 0;
 	left: 0;
 	background-color: grey;
-}
+}*/
 
-.hov_img_container:hover .hov_overlay_fade {
+.hov_img_container:hover .hov_overlay {
 	opacity: .8;
 }
