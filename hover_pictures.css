@@ -17,13 +17,6 @@
 	opacity: 1;
 }
 
-/*.hov_overlay {
-	position: absolute;
-	transition: all .3s ease;
-	opacity: 0;
-	background-color: black;
-}*/
-
 .hov_overlay {
   position: absolute;
   top: 0;
@@ -46,14 +39,6 @@
 	transform: translate(-50%,-50%);
 	font-size: 20px;
 }
-
-/*.hov_overlay_fade {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	background-color: grey;
-}*/
 
 .hov_img_container:hover .hov_overlay {
 	opacity: .8;
