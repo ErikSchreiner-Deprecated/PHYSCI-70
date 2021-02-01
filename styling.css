@@ -1,21 +1,30 @@
 header {
-	margin: 5px 10px;
+	padding: 50px;
+	background-color: #f2dede;
+	font-size: 250%;
+	font-color: blueviolet;
+	text-align: center;
+	font-family: Impact, fantasy;
 }
 
 nav {
-	margin: 3px 10px;
+	padding: 7px 10px;
+	background-color: #a0d1fc;
+	font-size: 100%;
+	color: black;
+	text-align: right;
 }
 
-h1 {
-	color: firebrick;
+/*h1 {
+	color: #060285;
 	font-family: Impact, fantasy;
-	font-size: 200%;
-}
+	font-size: 250%;
+}*/
 
 h3 {
-	color: crimson;
+	color: blueviolet;
 	font-family: Impact, fantasy;
-	font-size: 100%;
+	font-size: 150%;
 }
 
 p {
