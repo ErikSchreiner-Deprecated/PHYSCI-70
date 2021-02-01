@@ -26,8 +26,9 @@
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .5s ease;
+  transition: .4s cubic-bezier(0.4, 0, 1, 1);
   background-color: grey;
+  text-align:center;
 }
 
 .hov_text {
@@ -43,3 +44,21 @@
 .hov_img_container:hover .hov_overlay {
 	opacity: .8;
 }
+
+/*A link*/
+a:link {
+    color: blue;
+}
+/* A link that has been visited */
+a:visited {
+    color: blue;
+}
+/* A link that is hovered on */
+a:hover {
+    color: red;
+}
+/* A link that is selected */
+a:active {
+    color: red;
+}
+
