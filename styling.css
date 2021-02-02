@@ -18,6 +18,10 @@ nav {
 	text-align: right;
 }
 
+.background{
+	background-color: beige;
+}
+
 /*h1 {
 	color: #060285;
 	font-family: Impact, fantasy;
@@ -31,9 +35,9 @@ h3 {
 }
 
 p {
-	color: coral;
+	color: black;
 	font-family: courier new, monospace;
-	font size: 100%;
+	font-size: large;
 }
 
 #grad1 {
