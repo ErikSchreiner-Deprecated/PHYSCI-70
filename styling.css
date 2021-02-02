@@ -62,3 +62,6 @@ a:active {
     color: red;
 }
 
+.image{
+	max-width: 100%;
+}
