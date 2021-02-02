@@ -45,20 +45,4 @@
 	opacity: .8;
 }
 
-/*A link*/
-a:link {
-    color: blue;
-}
-/* A link that has been visited */
-a:visited {
-    color: blue;
-}
-/* A link that is hovered on */
-a:hover {
-    color: red;
-}
-/* A link that is selected */
-a:active {
-    color: red;
-}
 

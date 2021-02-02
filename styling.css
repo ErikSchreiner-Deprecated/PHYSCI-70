@@ -11,6 +11,7 @@ header {
 }
 
 nav {
+	margin-bottom: 14px;
 	padding: 7px;
 	background-color: #a0d1fc;
 	font-size: 115%;
@@ -64,4 +65,8 @@ a:active {
 
 .image{
 	max-width: 100%;
+}
+
+.center{
+	text-align: center;
 }
