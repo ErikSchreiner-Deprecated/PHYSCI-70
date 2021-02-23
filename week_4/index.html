@@ -90,60 +90,68 @@
     <div class="col-sm-6">
       <h4 class="center"> Programming: User Input</h4>
       <p>I realized half way through wiring I wasn't very familiar with user defined input and Arduino, or if that was even a thing. So I hoped that it was and after looking some things up I decided to make to the input simple. I had the serial monitor ask the user for an integer 0-9 and have it record the response as a variable ("num"). This varible was then sent through "if, else" statements until it found what number they inputed. Below is my code for user input, including the initial turning off of the lights using a list (which I will explain in the next paragraph).</p>
-
-      <div style="width:100%;height:350px;line-height:3em;overflow:auto;padding:5px;">
-        <figure>
-          <figcaption class="center"> User Input Code:</figcaption>
-          <pre>
-            <code>
-              void loop() {
-
-
-                 for(int i = 0; i = 1; i = i) {             // A For loops that allowed for multiple user input
-                  int index;
-                  for(index = 0; index <= 15; index++)
-                  {
-                  digitalWrite(ledPins[index], LOW);        // Turn the pins off
-                  }
-                  
-                  {
-                  Serial.println("Choose an integer 0-9");  // Prompt User for Input
-                  while (Serial.available() == 0) {  
-                  }
-                  }
-                  
-                 
-                  num = Serial.parseInt();                  // Read the data the user has input
-                    if (num == 0) {                         // Start of "If, else" until the inputed number matches
-
-                  }
-                     else if (num == 1) {         
-                                                            //In here turns the LEDs on
-                  }
-                     else if (num == 2) {
-
-                  }
-
-                  ...
-
-                     else if (num == 9) {
-
-                  }
-
-                  Serial.print("The user has choosen the number:"); // Restate what number they choose
-                  Serial.println(num);
-                  Serial.println(" ");
-                  delay(3500);                                      // Keeps lights on for 3.5seconds
-                  }                                                 // End for loop
-                }
-            </code>
-          </pre>
-        </figure>
-      </div>
       </div>
   <div class="col-sm-1">
   </div>
 </div>
 
+</br>
 
+<div class="row">
+  <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10">
+      <div style="width:100%;height:250px;line-height:3em;overflow:auto;padding:5px;">
+              <figure>
+                <figcaption class="center"> User Input Code:</figcaption>
+                <pre>
+                  <code>
+                    void loop() {
+
+
+                       for(int i = 0; i = 1; i = i) {             // A For loops that allowed for multiple user input
+                        int index;
+                        for(index = 0; index <= 15; index++)
+                        {
+                        digitalWrite(ledPins[index], LOW);        // Turn the pins off
+                        }
+                        
+                        {
+                        Serial.println("Choose an integer 0-9");  // Prompt User for Input
+                        while (Serial.available() == 0) {  
+                        }
+                        }
+                        
+                       
+                        num = Serial.parseInt();                  // Read the data the user has input
+                          if (num == 0) {                         // Start of "If, else" until the inputed number matches
+
+                        }
+                           else if (num == 1) {         
+                                                                  //In here turns the LEDs on
+                        }
+                           else if (num == 2) {
+
+                        }
+
+                        ...
+
+                           else if (num == 9) {
+
+                        }
+
+                        Serial.print("The user has choosen the number:"); // Restate what number they choose
+                        Serial.println(num);
+                        Serial.println(" ");
+                        delay(3500);                                      // Keeps lights on for 3.5seconds
+                        }                                                 // End for loop
+                      }
+                  </code>
+                </pre>
+              </figure>
+            </div>
+          </div>
+    <div class="col-sm-1">
+  </div>
+</div>
 </body>
