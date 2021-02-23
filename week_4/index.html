@@ -165,10 +165,7 @@
       <p>Sson as I started to define all the pins and turning them from "LOW" to "HIGH" using the digital write command I realized my code was going to become very large in size and very repeitive. I realized that there must be an easier way and I statrted to google to find a way to get around this messiness. I stumbled across a way to control pins using pinart and what port they are assosciated with. This looked something like "DDRx = B00100100" to set the pins corresponding port "x" to inputs (for 1) or outputs (for 0) (note: it is possible I got the 0 and 1 mixed up here). Then you can use "PORTx = B11001001" to turn the pins on (1) or turn the pins off (0). This would of made it much easier but when I tried it it didn't work. I came across something saying that this only works for certian processors and to check the processors datasheet to find similar coommands. After a few hours of research I still didn't understand how to do this for the Metro M0 Express and I was even starting to think maybe this is a feature of Circuit Python and not Arudino, but I'm not sure about that. Anyways, as I was started to go back to my old method of defining every pin as on or off, I found another way that involved for loops and lists of numbers. This is what I decided to go with. </p>
       <p>Using this I defined a list of nummers that corresponeded to the pins I wanted to turn on to make the number. I then defined a variable within a for loop that made the code switch through all the pins numebrs that I needed to turn on and set them to "HIGH". This ended up being a good solution to condense my code. Im sure that it could be better written though.        
       </p>
-      <h3 class="center"> Possible Changes: <h3>
-        <p>Although my LED display did work mainly there were some things I wasn't able to figure out in time. First, in the video shown, the 0 is more like a lower case n. This was because a wrong number in the list of pins to turn on. This was fixed. Something else that was interesting is that when you inputted a number once, you couldn't input it again becuase it didn't show up. Looking over my code this might be because I defined all my varibales as universal varibles. Maybe if I changed it it would have some effect. I'm not exactly sure why this was happening, but you still counld input a different one and get that number to appear. And finally, I think that the input is currently really basic (although still new for me), and it would be fun to change it so the Arduino would get a different input and have the LEDs be a game or a scoring system for a game. Overall, definitely provided some challenges but I understand some processes of the code much better, including "for loops," lists, and "if else" statements.</p>
       </div>
-
    <div class="col-sm-4">
         <figure style="margin-bottom: 15px"><iframe width="100%" height="307" src="https://www.youtube.com/watch?v=f7OOBz0JotU&feature=youtu.be" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="img-responive margin" alt="Video of LEDs"></iframe>
           <figcaption class="center"> Final LED display</figcaption>
@@ -241,4 +238,16 @@
   </div>
 </div>
 
+
+</br>
+<div class="row">
+  <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10">
+          <h3 class="center"> Possible Changes: <h3>
+                  <p> Although my LED display did work mainly there were some things I wasn't able to figure out in time. First, in the video shown, the 0 is more like a lower case n. This was because a wrong number in the list of pins to turn on. This was fixed. Something else that was interesting is that when you inputted a number once, you couldn't input it again becuase it didn't show up. Looking over my code this might be because I defined all my varibales as universal varibles. Maybe if I changed it it would have some effect. I'm not exactly sure why this was happening, but you still counld input a different one and get that number to appear. And finally, I think that the input is currently really basic (although still new for me), and it would be fun to change it so the Arduino would get a different input and have the LEDs be a game or a scoring system for a game. Overall, definitely provided some challenges but I understand some processes of the code much better, including "for loops," lists, and "if else" statements.</p>
+      </div>
+    <div class="col-sm-1">
+  </div>
+</div>
 </body>
