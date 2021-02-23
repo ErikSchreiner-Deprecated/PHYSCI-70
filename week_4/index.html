@@ -25,28 +25,124 @@
 </div>
 
 <!-- Div -->
+
+
 <div>
-  <figure>
-    <figcaption>Defining the pins for each number:</figcaption>
-    <pre>
-      <code>
-      int ledPins[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,A0};
-      int zero[] = {0,1,2,3,4,5,6,10,11,12,13,A0};
-      int one[] = {0,4,5,6,7,8,9,A0};
-      int two[] = {0,3,4,5,7,9,10,11,A0};
-      int three[] = {0,4,5,7,9,10,11,12,13,A0};
-      int four[] = {0,1,2,7,10,11,12,13,A0};
-      int five[] = {0,1,2,4,5,7,9,10,12,13,A0};
-      int six[] = {0,1,2,3,4,5,7,9,10,12,13,A0};
-      int seven[] = {0,1,5,10,11,12,13,A0};
-      int eight[] = {0,1,2,3,4,5,7,9,10,11,12,13,A0};
-      int nine[] = {0,1,2,4,5,7,9,10,11,12,13,A0};
-    </code>
-  </pre>
-</figure>
+
+  
 </div>
 
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+    <div class="col-sm-6">
+      <h3 class="center"> Brainstorming:</h3>
+      <p>I wasn't entirely sure on what to make this week. It was very open ended but I moved physical location so I couldnt change up my previous project with better motor control. I didn't have any great ideas with the motor and I eventually decided that I wanted to make a led array that would respond to user input.</p>
+      <h3 class="center"> 15-Pin Responsive Led Array:</h3>
+      <p>To start, my idea was to make it so that when a user inputed something, a number would pop up. To do this, I knew that I needed to wire each LED such that it had individual digital pin control. Then I needed some sort of user input that would make these numbers appear. Besides the wiring being messy, I wasn't expecting it to be that hard, but of course I made it take much longer with trying to optimize my code.</p>
+      <h4 class="center"> Wiring: LED Array</h4>
+      <p>To start wiring everything up I chose 15 resistors and 15 LEDs (some of which I tested the light level of). Once I had this I started to place my LEDs in an array. My first few iterations I didn't like or resulted in the lights begin in the same row on the breadboard, meaning I wouldn't have individual control. Therefore, I ended up making my LED's such that one side of the breadboard had two LED appearing to be in the same row, but one LED legs were bent such that it it wasn't in the same row. </p>
+    </div>
+  <div class="col-sm-4">
+    <figure> <img src="./15pins.jpg" class="image" alt="LED Array">
+        <figcaption class="center"> </figcaption>
+      </figure>
+    <figure> <img src="./led_array_tinkercad.jpg" class="image" alt="LED Array TinkerCad">
+        <figcaption class="center"> </figcaption>
+      </figure>
+  </div>
+  <div class="col-sm-1">
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-3">
+    <figure> <img src="./intercad_15led.jpg" class="image" alt="LED Array Done TinkerCad">
+        <figcaption class="center"> </figcaption>
+      </figure>
+      <div class="col-sm-3">
+    <figure> <img src="./resistors.jpg" class="image" alt="LED Array Resistors Added">
+        <figcaption class="center"> </figcaption>
+      </figure>
+    </div>
+  </div>
+    <div class="col-sm-4">
+      <h4 class="center"> Wiring: Resistors and Wires</h4>
+      Now that I had the general shape of the array, I could start putting in the resistors and pins. I started with the resistors and then I moved on to the pins. As I was wiring it I realized that since I have wires coming from 16 pins (15 for LED and 1 for ground) that it started to cross over my LED array. To avoid this, I actually used two other breadboards as "middle-boards" which allowed the wiring to now overlap the array. Although in TinkerCad it still looks like it overlaps, in person it helped alot. 
+    </div>
+  <div class="col-sm-1">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-3">
+    <figure> <img src="./gif.gif" class="image" alt="Gif of Light">
+        <figcaption class="center"> </figcaption>
+      </figure>
+      <div class="col-sm-3">
+    <figure> <img src="./0_test" class="image" alt="LED Array Resistors Added">
+        <figcaption class="center"> </figcaption>
+      </figure>
+    </div>
+  </div>
+    <div class="col-sm-4">
+      <h4 class="center"> Programming: User Input</h4>
+      I realized half way through wiring I wasn't very familiar with user defined input and Arduino, or if that was even a thing. So I hoped that it was and after looking some things up I decided to make to the input simple. I had the serial monitor ask the user for an integer 0-9 and have it record the response as a variable ("num"). This varible was then sent through "if, else" statements until it found what number they inputed. Below is my code for user input, including the initial turning off of the lights using a list (which I will explain in the next paragraph).
+    </div>
+        <figure>
+          <figcaption class="center"> User Input Code:</figcaption>
+          <pre>
+            <code>
+              void loop() {
+
+
+                 for(int i = 0; i = 1; i = i) {             // A For loops that allowed for multiple user input
+                  int index;
+                  for(index = 0; index <= 15; index++)
+                  {
+                  digitalWrite(ledPins[index], LOW);        // Turn the pins off
+                  }
+                  
+                  {
+                  Serial.println("Choose an integer 0-9");  // Prompt User for Input
+                  while (Serial.available() == 0) {  
+                  }
+                  }
+                  
+                 
+                  num = Serial.parseInt();                  // Read the data the user has input
+                    if (num == 0) {                         // Start of "If, else" until the inputed number matches
+
+                  }
+                     else if (num == 1) {         
+                                                            //In here turns the LEDs on
+                  }
+                     else if (num == 2) {
+
+                  }
+
+                  ...
+
+                     else if (num == 9) {
+
+                  }
+
+                  Serial.print("The user has choosen the number:"); // Restate what number they choose
+                  Serial.println(num);
+                  Serial.println(" ");
+                  delay(3500);                                      // Keeps lights on for 3.5seconds
+                  }                                                 // End for loop
+                }
+            </code>
+          </pre>
+        </figure>
+  <div class="col-sm-1">
+  </div>
+</div>
 
 
 </body>
