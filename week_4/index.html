@@ -162,7 +162,7 @@
   </div>
     <div class="col-sm-6">
       <h4 class="center"> Programming: Turning the LEDs On</h4>
-      <p>Sson as I started to define all the pins and turning them from "LOW" to "HIGH" using the digital write command I realized my code was going to become very large in size and very repeitive. I realized that there must be an easier way and I statrted to google to find a way to get around this messiness. I stumbled across a way to control pins using pinart and what port they are assosciated with. This looked something like "DDRx = B00100100" to set the pins corresponding port "x" to inputs (for 1) or outputs (for 0) (note: it is possible I got the 0 and 1 mixed up here). Then you can use "PORTx = B11001001" to turn the pins on (1) or turn the pins off (0). This would of made it much easier but when I tried it it didn't work. I came across something saying that this only works for certian processors and to check the processors datasheet to find similar coommands. After a few hours of research I still didn't understand how to do this for the Metro M0 Express and I was even starting to think maybe this is a feature of Circuit Python and not Arudino, but I'm not sure about that. Anyways, as I was started to go back to my old method of defining every pin as on or off, I found another way that involved for loops and lists of numbers. This is what I decided to go with. </p>
+      <p>Soon as I started to define all the pins and turning them from "LOW" to "HIGH" using the digital write command I realized my code was going to become very large in size and very repeitive. I realized that there must be an easier way and I statrted to google to find a way to get around this messiness. I stumbled across a way to control pins using pinart and what port they are assosciated with. This looked something like "DDRx = B00100100" to set the pins corresponding port "x" to inputs (for 1) or outputs (for 0) (note: it is possible I got the 0 and 1 mixed up here). Then you can use "PORTx = B11001001" to turn the pins on (1) or turn the pins off (0). This would of made it much easier but when I tried it it didn't work. I came across something saying that this only works for certian processors and to check the processors datasheet to find similar coommands. After a few hours of research I still didn't understand how to do this for the Metro M0 Express and I was even starting to think maybe this is a feature of Circuit Python and not Arudino, but I'm not sure about that. Anyways, as I was started to go back to my old method of defining every pin as on or off, I found another way that involved for loops and lists of numbers. This is what I decided to go with. </p>
       <p>Using this I defined a list of nummers that corresponeded to the pins I wanted to turn on to make the number. I then defined a variable within a for loop that made the code switch through all the pins numebrs that I needed to turn on and set them to "HIGH". This ended up being a good solution to condense my code. Im sure that it could be better written though.        
       </p>
       </div>
@@ -238,8 +238,8 @@
   </div>
 </div>
 
-
 </br>
+
 <div class="row">
   <div class="col-sm-1">
     </div>
