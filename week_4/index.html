@@ -166,11 +166,11 @@
       <p>Using this I defined a list of nummers that corresponeded to the pins I wanted to turn on to make the number. I then defined a variable within a for loop that made the code switch through all the pins numebrs that I needed to turn on and set them to "HIGH". This ended up being a good solution to condense my code. Im sure that it could be better written though.        
       </p>
       <h3 class="center"> Possible Changes: <h3>
-        <p>Although my LED display did work mainly there were some things I wasn't able to figure out in time. First, in the video shown, the 0 is more like a lower case n. This was because a wrong number in the list of pins to turn on. This was fixed. Something else that was interesting is that when you inputted a number once, you couldn't input it again becuase it didn't show up. Looking over my code this might be because I defined all my varibales as universal varibles. Maybe if I changed it it would have some effect. I'm not exactly sure why this was happening, but you still counld input a different one and get that number to appear. And finally, I think that the input is currently really basic (although still new for me), and it would be fun to change it so the Arduino would get a different input and have the LEDs be a game or a scoring system for a game. Overall, definitely provided some challenges but I understand some processes of the code much better, including "for loops" and "if else" statements.</p>
+        <p>Although my LED display did work mainly there were some things I wasn't able to figure out in time. First, in the video shown, the 0 is more like a lower case n. This was because a wrong number in the list of pins to turn on. This was fixed. Something else that was interesting is that when you inputted a number once, you couldn't input it again becuase it didn't show up. Looking over my code this might be because I defined all my varibales as universal varibles. Maybe if I changed it it would have some effect. I'm not exactly sure why this was happening, but you still counld input a different one and get that number to appear. And finally, I think that the input is currently really basic (although still new for me), and it would be fun to change it so the Arduino would get a different input and have the LEDs be a game or a scoring system for a game. Overall, definitely provided some challenges but I understand some processes of the code much better, including "for loops," lists, and "if else" statements.</p>
       </div>
 
    <div class="col-sm-4">
-        <figure style="margin-bottom: 15px"><iframe width="100%" height="307" src="https://youtu.be/f7OOBz0JotU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="img-responive margin" alt="Video of LEDs"></iframe>
+        <figure style="margin-bottom: 15px"><iframe width="100%" height="307" src="https://www.youtube.com/watch?v=f7OOBz0JotU&feature=youtu.be" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="img-responive margin" alt="Video of LEDs"></iframe>
           <figcaption class="center"> Final LED display</figcaption>
         </figure>
    </div>
@@ -189,8 +189,8 @@
                 <figcaption class="center"> LED Code:</figcaption>
                 <pre>
                   <code>
-                    int ledPins[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,A0};     //Define the pins that need to be turned on for each number
-                    int zero[] = {0,1,2,3,4,5,9,10,11,12,13,A0};
+                    int ledPins[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,A0};    //Defined all pins so I could turn them off using for loop
+                    int zero[] = {0,1,2,3,4,5,9,10,11,12,13,A0};           //Defined each pin that needs to be turned on for each number
                     int one[] = {0,4,5,6,7,8,9,A0};
                     int two[] = {0,3,4,5,7,9,10,11,A0};
                     int three[] = {0,4,5,7,9,10,11,12,13,A0};
@@ -201,8 +201,8 @@
                     int eight[] = {0,1,2,3,4,5,7,9,10,11,12,13,A0};
                     int nine[] = {0,1,2,4,5,7,9,10,11,12,13,A0};
 
-                    int num;                                              //Defined a variable that was used to store the user's number 
-                    int index0;                                           //Defined variables that were later used to assist in looping through the list of pins numbers
+                    int num;                                         //Defined a variable that was used to store the user's number 
+                    int index0;                                      //Defined variables that were later used to assist in looping through the list of pins numbers
                     int index1;       
                     int index2;
                     int index3;
@@ -216,19 +216,19 @@
                     void setup()
                     {
                       int index;
-                      for(index = 0; index <= 15; index++)                //Use "for loop" in conbination with line below to turn all pins off
+                      for(index = 0; index <= 15; index++)              //Use "for loop" in conbination with line below to turn all pins off
                     {
                       pinMode(ledPins[index],OUTPUT);                     
                     }
-                      Serial.begin(9600);                                 //Turn Serial Monitor on
+                      Serial.begin(9600);                                //Turn Serial Monitor on
                     }
 
 
                     //This is a piece within the void(loop) section:
 
                      else if (num == 1) {         
-                         for(index1; index1 <= 8; index1 ++){             //For loop to cycle through list of numbers
-                         digitalWrite(one[index1], HIGH);                 //Set all the pin numbers in the list to 'on'
+                         for(index1; index1 <= 8; index1 ++){           //For loop to cycle through list of numbers
+                         digitalWrite(one[index1], HIGH);               //Set all the pin numbers in the list to 'on'
                           }                                         
                         }
 
