@@ -77,8 +77,13 @@
 <div class="row">
   <div class="col-sm-1">
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-2">
     <figure> <img src="./gif.gif" class="image" alt="Gif of Light">
+        <figcaption class="center"> </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm-2">
+    <figure> <img src="./0_test.jpg" class="image" alt="Gif of Light">
         <figcaption class="center"> </figcaption>
       </figure>
     </div>
@@ -156,16 +161,83 @@
   <div class="col-sm-1">
   </div>
     <div class="col-sm-6">
-      <h4 class="center"> Programming: User Input</h4>
-      <p>I realized half way through wiring I wasn't very familiar with user defined input and Arduino, or if that was even a thing. So I hoped that it was and after looking some things up I decided to make to the input simple. I had the serial monitor ask the user for an integer 0-9 and have it record the response as a variable ("num"). This varible was then sent through "if, else" statements until it found what number they inputed. Below is my code for user input, including the initial turning off of the lights using a list (which I will explain in the next paragraph).</p>
+      <h4 class="center"> Programming: Turning the LEDs On</h4>
+      <p>Sson as I started to define all the pins and turning them from "LOW" to "HIGH" using the digital write command I realized my code was going to become very large in size and very repeitive. I realized that there must be an easier way and I statrted to google to find a way to get around this messiness. I stumbled across a way to control pins using pinart and what port they are assosciated with. This looked something like "DDRx = B00100100" to set the pins corresponding port "x" to inputs (for 1) or outputs (for 0) (note: it is possible I got the 0 and 1 mixed up here). Then you can use "PORTx = B11001001" to turn the pins on (1) or turn the pins off (0). This would of made it much easier but when I tried it it didn't work. I came across something saying that this only works for certian processors and to check the processors datasheet to find similar coommands. After a few hours of research I still didn't understand how to do this for the Metro M0 Express and I was even starting to think maybe this is a feature of Circuit Python and not Arudino, but I'm not sure about that. Anyways, as I was started to go back to my old method of defining every pin as on or off, I found another way that involved for loops and lists of numbers. This is what I decided to go with. </p>
+      <p>Using this I defined a list of nummers that corresponeded to the pins I wanted to turn on to make the number. I then defined a variable within a for loop that made the code switch through all the pins numebrs that I needed to turn on and set them to "HIGH". This ended up being a good solution to condense my code. Im sure that it could be better written though.        
+      </p>
+      <h3 class="center"> Possible Changes: <h3>
+        <p>Although my LED display did work mainly there were some things I wasn't able to figure out in time. First, in the video shown, the 0 is more like a lower case n. This was because a wrong number in the list of pins to turn on. This was fixed. Something else that was interesting is that when you inputted a number once, you couldn't input it again becuase it didn't show up. Looking over my code this might be because I defined all my varibales as universal varibles. Maybe if I changed it it would have some effect. I'm not exactly sure why this was happening, but you still counld input a different one and get that number to appear. And finally, I think that the input is currently really basic (although still new for me), and it would be fun to change it so the Arduino would get a different input and have the LEDs be a game or a scoring system for a game. Overall, definitely provided some challenges but I understand some processes of the code much better, including "for loops" and "if else" statements.</p>
       </div>
 
    <div class="col-sm-4">
-    <figure> <img src="./0test.jpg" class="image" alt="Testing 0">
-        <figcaption class="center"> </figcaption>
-      </figure>
-    </div>
+        <figure style="margin-bottom: 15px"><iframe width="100%" height="307" src="https://youtu.be/f7OOBz0JotU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="img-responive margin" alt="Video of LEDs"></iframe>
+          <figcaption class="center"> Final LED display</figcaption>
+        </figure>
+   </div>
   <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10">
+      <div style="width:100%;height:250px;line-height:3em;overflow:auto;padding:5px;">
+              <figure>
+                <figcaption class="center"> User Input Code:</figcaption>
+                <pre>
+                  <code>
+                    int ledPins[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,A0};     //Define the pins that need to be turned on for each number
+                    int zero[] = {0,1,2,3,4,5,9,10,11,12,13,A0};
+                    int one[] = {0,4,5,6,7,8,9,A0};
+                    int two[] = {0,3,4,5,7,9,10,11,A0};
+                    int three[] = {0,4,5,7,9,10,11,12,13,A0};
+                    int four[] = {0,1,2,7,10,11,12,13,A0};
+                    int five[] = {0,1,2,4,5,7,9,10,12,13,A0};
+                    int six[] = {0,1,2,3,4,5,7,9,10,12,13,A0};
+                    int seven[] = {0,1,5,10,11,12,13,A0};
+                    int eight[] = {0,1,2,3,4,5,7,9,10,11,12,13,A0};
+                    int nine[] = {0,1,2,4,5,7,9,10,11,12,13,A0};
+
+                    int num;                                              //Defined a variable that was used to store the user's number 
+                    int index0;                                           //Defined variables that were later used to assist in looping through the list of pins numbers
+                    int index1;       
+                    int index2;
+                    int index3;
+                    int index4;
+                    int index5;
+                    int index6;
+                    int index7;
+                    int index8;
+                    int index9;
+
+                    void setup()
+                    {
+                      int index;
+                      for(index = 0; index <= 15; index++)                //Use "for loop" in conbination with line below to turn all pins off
+                    {
+                      pinMode(ledPins[index],OUTPUT);                     
+                    }
+                      Serial.begin(9600);                                 //Turn Serial Monitor on
+                    }
+
+
+                    //This is a piece within the void(loop) section:
+
+                     else if (num == 1) {         
+                         for(index1; index1 <= 8; index1 ++){             //For loop to cycle through list of numbers
+                         digitalWrite(one[index1], HIGH);                 //Set all the pin numbers in the list to 'on'
+                          }                                         
+                        }
+
+                  </code>
+                </pre>
+              </figure>
+            </div>
+          </div>
+    <div class="col-sm-1">
   </div>
 </div>
 
