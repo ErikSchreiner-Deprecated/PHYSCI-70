@@ -42,6 +42,12 @@ p {
 	font-size: large;
 }
 
+ul {
+	color: black;
+	font-family: courier new, monospace;
+	font-size: medium;
+}
+
 #grad1 {
 	background-color: peachpuff;
 	background-image: linear-gradient(to right, peachpuff,  wheat);
