@@ -111,4 +111,94 @@
 
 </br>
 
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+    <div class="col-sm-4">
+      <figure> <img src="./archimedes.jpg" class="image" alt="The Archimedes Screw Design">
+        <figcaption class="center"></figcaption>
+      </figure>
+    </div>
+        <div class="col-sm-6">
+            <h4 class="center"> Learning to make Propeller in Fusion 360: </h4>
+            <p> I was pretty unsure on how to start to make a propeller in Fusion. The reason why it was hard to make subtractively was the same reason for why I was unsure where to start. I found what I thought was a great example on youtube <a href="https://www.youtube.com/watch?v=g_Wi_JSmKvI&t=322s"> here </a>. From this video I learned about the loft tool which was essential in creating the curved 3-Dimensional shape of the blades. From what I gathered/have seen, the loft tool is essentially the same as extrude, but does't have to be straight in one direction, and it allows for further control of the end product throught the ability to choose guide raislf or the loft. So after watching that video and a few others to get a some more ideas, I started looking for a porpeler to model off. 
+            </p>
+
+            <h4 class="center"> Making the Propeller in Fusion 360: Print Time<h4>
+            <p> As I was doing my propeller research, which might actually not have been that useful, I realized that almost nowhere could I find a complete design drawing of a propeller. If I could of found one (and I imagine they are out there), I assume that the porpeller information I was looking at would have been more useful. Instead, I went to using the canvas tool. I found some front and side view profiles of porpellers from <a href="https://www.amazon.com/dp/B07XL8H297/ref=sspa_dk_detail_1?psc=1&pd_rd_i=B07XL8H297&pd_rd_w=Ox0I9&pf_rd_p=cbc856ed-1371-4f23-b89d-d3fb30edf66d&pd_rd_wg=Svn0L&pf_rd_r=58JW2EX4Y8TD8HC78X4D&pd_rd_r=677e9c97-839e-4129-8274-d5ed89944348&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzSjJPTzg4NzdLTkwxJmVuY3J5cHRlZElkPUEwMjE4MTM4VDA0M0RLVVhSSDdLJmVuY3J5cHRlZEFkSWQ9QTA3MzA1NzMzNVlERkg5TDYwQzFZJndpZGdldE5hbWU9c3BfZGV0YWlsX3RoZW1hdGljJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="> this </a> product on amazon. I took those profiles and put them into a new Fusion 360 file. I was unsure on how big to make them, since the 3D print time was constrained to what I thought was 3hrs (but turned out to be 1hr, which in retrospect, makes more sense). To help me gather a better understanding of the scale I could actually build on, I made a 45mm x 45mm box and put it into Prusa Slicer to see how long it would take. Although simple, this helped me get a sense of the duration of the prints. 
+            </p>
+        </div>
+    <div class="col-sm-1">
+    </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-6">
+            <h4 class="center"> Making the Propeller in Fusion 360: Sketching to Lofting to Combining<h4>
+            <p> Since I now had a better idea on the size of the peice I should be making, I calibrated my canvases using the diameter of the propeller as a guide to make them approximately the size I wanted. It turned out that the front profile wasn't that helpful since I was try to make this fit onto the G20 motor from our lab kits so their middle peice was drastically different than what I wanted. Nevertheless, I started to use the fitpoint spline tool to gauge the general center of where the blade connected to the center. From this I was able to offset the line and create a circle which connected the lines and formed a bounded shape. This was a slightly different method than was used in the tutorial video but it allowed for more accurately representing the curves of the blade. I then created an offset plane (which is a very useful tool I just found out about) to create another sketch some distance away that represented the end of the blade. I repeated this once more to create a middle sketch that I would use to help guide my loft. From there I was able to create another sketch, select "3d Sketch" and create a spline from the ends of each circles which acted as a "rail" for my loft. At this point I was ready to loft and simpliy selected all the faces I wanted the loft to contain. After lofting, The blade was done essentially done. I realized that the blade didn't really have a curve shape conencting it to the center piece which would result in a weird looking, weaker connection. To strengthen it, I went back and created on more sketch which was in towards the center more and about two times as large as my other sketches. Now when I lofted my profiles, I also selected this sketch which made the blade increase in size where it would be connecting to the center. After this the last thing for me to do was take some measurements of the G20 motor and create a center piece that the motor would fit into. This was pretty simple as I created a similar feature when I modelled the stepper motor. At this point I just used the "circluar array" tool to make more blades, and combined my bodies. The final Fusion 360 product can be seen below and can be downloaded !!HERE!!.  
+            </p>
+        </div>
+    <div class="col-sm-4">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="./sketches.jpg" alt="Sketches">
+              <div class="carousel-caption">
+                <h2>My sketches</h2>
+                <p></p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="guide_rails.jpg" alt="Guide Rails">
+              <div class="carousel-caption">
+                <h2>The Guide Rails</h2>
+                <p></p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="loft.jpg" alt="Lofted Product">
+              <div class="carousel-caption">
+                <h2>The Lofted Product</h2>
+                <p></p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="final_propeller.jpg" alt="Final Propeller">
+              <div class="carousel-caption">
+                <h2>The Final Fusion 360 Product</h3>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </div>
+</div>
+
+</br>
 </body>
