@@ -36,6 +36,13 @@ h3 {
 	text-align: center;
 }
 
+h2 {
+	color: red;
+	font-family: Impact, fantasy;
+	font-size: 100%;
+	text-align: center;
+}
+
 p {
 	color: black;
 	font-family: courier new, monospace;
