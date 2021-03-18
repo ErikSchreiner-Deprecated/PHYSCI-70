@@ -71,7 +71,7 @@
     <div class="col-sm-10">
       <div style="width:100%;height:250px;line-height:3em;overflow:auto;padding:5px;">
               <figure>
-                <figcaption class="center"> User Input Code:</figcaption>
+                <figcaption class="center"> Laser Class:</figcaption>
                 <pre>
                   <code>
                     class Laser
@@ -134,7 +134,6 @@
       </figure>
     </div>
     <div class="col-sm-6">
-            <h3 class="center"> Input and Output Devices Continued: </h3>
             <h4 class =" center"> Light Sensor + Peizo: </h4>
             <p> My plan was to use the laser, make the light hit a light sensor, which would then tell a buzzer (since I don't have a MIDI jack to make sounds with my conputer) to play a sound. I realized fast that making a peizo play using the Huzzah was a little more elaborate than using the metro. The Huzzah does not support arduino's 'Tone' function. There is a workaround for this though the use of different commands (which you can see below). Essentially, from my understanding, the peizo is treated similar to a LED which we send a Pulse Width Modulation signal though. I ended up getting the buzzer to play so I then started to work on interfacing the light sensor with it.
             </p>
@@ -155,7 +154,7 @@
     <div class="col-sm-10">
       <div style="width:100%;height:250px;line-height:3em;overflow:auto;padding:5px;">
               <figure>
-                <figcaption class="center"> User Input Code:</figcaption>
+                <figcaption class="center"> Sensor + Buzzer Class:</figcaption>
                 <pre>
                   <code>
                     class Sound 
@@ -212,7 +211,6 @@
   <div class="col-sm-1">
   </div>
     <div class="col-sm-6">
-            <h3 class="center"> Input and Output Devices Continued: </h3>
             <h4 class =" center"> Final Product: </h4>
             <p> Although my class for the laser does not do much, the final code can be seen below. To the right you can see a video of the final product and how the sensor behaves when it is covered (fully and partly) and how the sensor has a strong response to the laser light.
             </p>
