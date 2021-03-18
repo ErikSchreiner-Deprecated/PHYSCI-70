@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<head>
+  <title>PHYSCI 70: Intro to Digital Fabrication </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="../styling.css" rel="stylesheet">
+  <link href="../hover_pictures.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<!-- Heading -->
+<div class="header_main">
+	<header>Week 6: Input Devices
+	</header>
+</div>
+
+<!-- Nav -->
+<div>
+	<nav><a href='../index.html'>Home</a></nav>
+</div>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-6">
+            <h3 class="center"> I broke my Metro: </h3>
+            <p> This week I broke my metro. Not sure what I did exactly (I have a few ideas), but it seems to over heat within a few minute of being plugged in and the port is not registering. But I have an UNO... that I don't have a plug for where I am currently. So the work I did the week consisted mainly of the huzzah as the main microcontroller and after a few workarounds everything worked out.  
+            </p>
+        </div>
+    <div class="col-sm-4">
+      <figure> <img src="./broken_metro.jpg" class="image" alt="Broken Metro Code">
+        <figcaption class="center"> </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+    <div class="col-sm-4">
+      <figure> <img src="./led_circuit.jpg" class="image" alt="Broken Metro Code">
+        <figcaption class="center"> </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm-6">
+            <h3 class="center"> Input and Output Devices: </h3>
+            <h4 class =" center"> Laser </h4>
+            <p> Besides the little hiccup with the metro, this week was pretty productive for me. I started to try to get an idea of how my final project will work out. I started by placing aligator clips on my laser so I can control when my laser turns on and off. This also allows me to connect it to an external battery pack. It took me a little while to figure out how exactly to control the laser using the microcontroller using a transistor, but with a suggestion from Nathan I found an example of a motor being run with a transistor and I was ale to receate the circuit with a laser instead of a motor. Although not terribly important for what I did the rest of this week, the flashing of the laser is going to be vital for my final project and having the correct timings. 
+            </p>
+            <P> After getting the laser to hook up I went back to the "Mulitasking with Arduino" tutorial and was able to pull their class for blinking the LED without the use of the delay function. I changed very little since it was essentially all I needed. What I have within the Arduino program can be seen below.
+            </P>
+        </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10">
+      <div style="width:100%;height:250px;line-height:3em;overflow:auto;padding:5px;">
+              <figure>
+                <figcaption class="center"> User Input Code:</figcaption>
+                <pre>
+                  <code>
+                    class Laser
+                      {
+                        int laserPin;
+                        long OnTime;
+                        long OffTime;
+                       
+                        int laserState;
+                        unsigned long previousMillis;
+
+                        public:
+                        Laser(int pin, long on, long off)
+                        {
+                        laserPin = pin;
+                        pinMode(laserPin, OUTPUT);     
+                          
+                        OnTime = on;
+                        OffTime = off;
+                        
+                        laserState = LOW; 
+                        previousMillis = 0;
+                        }
+                       
+                        void Update()
+                        {
+                          unsigned long currentMillis = millis();
+                           
+                          if((laserState == HIGH) && (currentMillis - previousMillis >= OnTime))
+                          {
+                            laserState = LOW;
+                            previousMillis = currentMillis;
+                            digitalWrite(laserPin, laserState);
+                          }
+                          else if ((laserState == LOW) && (currentMillis - previousMillis >= OffTime))
+                          {
+                            laserState = HIGH;
+                            previousMillis = currentMillis;
+                            digitalWrite(laserPin, laserState);
+                          }
+                        }
+                      };
+                  </code>
+                </pre>
+              </figure>
+            </div>
+          </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+    <div class="col-sm-4">
+      <figure> <img src="./led_circuit.jpg" class="image" alt="Broken Metro Code">
+        <figcaption class="center"> </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm-6">
+            <h3 class="center"> Input and Output Devices Continued: </h3>
+            <h4 class =" center"> Light Sensor + Peizo: </h4>
+            <p> My plan was to use the laser, make the light hit a light sensor, which would then tell a buzzer (since I don't have a MIDI jack to make sounds with my conputer) to play a sound. I realized fast that making a peizo play using the Huzzah was a little more elaborate than using the metro. The Huzzah does not support arduino's 'Tone' function. There is a workaround for this though the use of different commands (which you can see below). Essentially, from my understanding, the peizo is treated similar to a LED which we send a Pulse Width Modulation signal though. I ended up getting the buzzer to play so I then started to work on interfacing the light sensor with it.
+            </p>
+            <p> Within the class I made for the buzzer I essentially used analogRead to map the light level the sensor was experiencing to a variable "value." This then allowed me to say, "if value > (about the light level in the room at the time + some), then make noise. Else, don't make noise." This works fine since the light that is redirected from the laser to the sensor usually has a significant change. You can think of this as the ambient light temperature being the ground state or 0-point, and every time enough diffuse light from the laser hit the sensor it 'jumps' away from this ground state and if there is enough light it 'jumps' through the ceiling. The 'breaking' of this ceiling is what tells the buzzer to play. One downside of this that I see is that I have to adjust the sensor to different light levels. I am thinking of a way to change this so it knows automatically.  
+            </p>
+        </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+</body>
