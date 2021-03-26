@@ -84,7 +84,7 @@
             <p> Since the project was very open ended and we were working with remote communication, I thought it would be interesting if I created a remote controlled car. To do I planned to used potentiometers with the Huzzah to control the speed of two N20 motors, and then I figured I could add other features such as camera on the car using the built in camera feature of the ESP-32 CAM. I defiinitely hit some rough patches while wookring but in the end I was able to create something that resembled a functional RC car. 
             </p>
             <h3 class="center"> The N20's: </h3>
-            <p> Getting the N20's to work probably took the most amount of time. At first I completely forget and neglected the motor drivers and I was trying to control them using a transistor. The use of the transistor allowed me to use an external battery pack to power the motors. I'm sure this would of worked, but I was was struggling to get the motors to move with the Ledc PWM functionality. I imagine that it might of been a problem with the wiring of the transitor. At this point since I was struggling and was trying to use ESP Now at the same time I decided to just try to get the motors to run only using the CAM. After ditching ESP NOW, and finding the motor driver, along with <a href="https://www.arduino.cc/reference/en/libraries/esp32-analogwrite/">this library></a> (which allows for analogWrite functionality thorugh functions built around PWM) getting the motors to run became fairly simple. I think my biggest problem was not using the drivers sooner I could of figured out the PWM since I used it last week.
+            <p> Getting the N20's to work probably took the most amount of time. At first I completely forget and neglected the motor drivers and I was trying to control them using a transistor. The use of the transistor allowed me to use an external battery pack to power the motors. I'm sure this would of worked, but I was was struggling to get the motors to move with the Ledc PWM functionality. I imagine that it might of been a problem with the wiring of the transitor. At this point since I was struggling and was trying to use ESP Now at the same time I decided to just try to get the motors to run only using the CAM. After ditching ESP NOW, and finding the motor driver, along with <a href="https://www.arduino.cc/reference/en/libraries/esp32-analogwrite/">this library</a> (which allows for analogWrite functionality thorugh functions built around PWM) getting the motors to run became fairly simple. I think my biggest problem was not using the drivers sooner I could of figured out the PWM since I used it last week.
             </p>
             <p> Since I had my motors working I got to work on the frame of the car. I found that the box for the servo motors was conveniently exactly the size of the external 4 AA batter pack and (not as conveniently) just a bit long for the 3D motor holder within the kit. With some quick work using an box cutter I was able to get 'wheel wells' for the tires and was able to glue the 3D printed motor holder on. I also made a little hole to connect the wires to the driver. For the front wheel, I used a coat hanger and bent it and pushed it into the cardboard. The battery pack conveniently helped hold the coat hanger in place. Also, I found out that the best place for the car to continue to uplaod code to my CAM was "in the shop" (which was just the car propped up by the apple pencil holder the college sent me on loan). 
             </p>
@@ -149,11 +149,11 @@
   <div class="col-sm-1">
   </div>
   <div class ="col-sm-5">
-       <figure> <iframe width="100%" src="https://www.youtube.com/embed/KZMuAjQGt50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="spinning N20 with ESPNow"></iframe>
+       <figure> <iframe width="100%" height="350" src="https://www.youtube.com/embed/KZMuAjQGt50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="spinning N20 with ESPNow"></iframe>
       </figure>
   </div>
   <div class ="col-sm-5">
-       <figure> <iframe width="100%" src="https://www.youtube.com/embed/WQW2XTNLC9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="test drive"></iframe>
+       <figure> <iframe width="100%" height="350" src="https://www.youtube.com/embed/WQW2XTNLC9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="test drive"></iframe>
       </figure>
   </div>
   <div class="col-sm-1">
@@ -242,6 +242,8 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+      </div>
+    </div>
   <div class="col-sm-6">
             <h3 class="center"> The Add-ons: </h3> 
             <p> At this point it was getting late but I felt like I didn't have enough going on with my car. So I quickly hooked up the peizo that was controlled by a button on the huzzah, which gave me a horn on my car. After this I called it good for the night.
@@ -253,8 +255,6 @@
             <p> Below you can find the video of the controls and the car itself (note: I realized some aren't working the way the should, but the gist is there) and the car driving. Sadly it didn't turn like I hoped it would when I turned one wheel off. If I had more times I would of looked into that.
             </p>
         </div>
-    </div>
-  </div>
     <div class="col-sm-1">
   </div>
 </div>
