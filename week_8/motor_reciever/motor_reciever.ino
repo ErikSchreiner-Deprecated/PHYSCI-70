@@ -121,11 +121,9 @@ void rainbow(){
         strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
       }
       strip.show();
-      previousMillis = currentMillis;
     }
   }
   else if (dataArray[3] < 1){
     strip.clear();
-    previousMillis = currentMillis;
   }
 }
