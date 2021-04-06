@@ -34,7 +34,7 @@
             </p>
         </div>
   <div class ="col-sm-4">
-       <figure> <img src="./motor_shaft_complete" class="image" alt="The Completed Motor Shaft">
+       <figure> <img src="./motor_shaft_complete.jpg" class="image" alt="The Completed Motor Shaft">
         <figcaption class="center"> </figcaption>
       </figure>
   </div>
@@ -54,6 +54,8 @@
   </div>
 </div>
 
+</br>
+
 <div class="row">
   <div class="col-sm-1">
     </div>
@@ -63,52 +65,52 @@
                 <figcaption class="center"> User Input Code:</figcaption>
                 <pre>
                   <code>
-                      #include <AccelStepper.h>
+                      #include "AccelStepper.h"
 
-//Pins for the motor driver.
-const int stepPin = 13;
-const int dirPin = 12;
+                      //Pins for the motor driver.
+                      const int stepPin = 13;
+                      const int dirPin = 12;
 
-// Definting my buttons
-const int buttonUp = 14;
-const int buttonDown = 15;
+                      // Definting my buttons
+                      const int buttonUp = 14;
+                      const int buttonDown = 15;
 
-// Defining a stepper and the pins it will use
-AccelStepper stepper(1, stepPin, dirPin);
+                      // Defining a stepper and the pins it will use
+                      AccelStepper stepper(1, stepPin, dirPin);
 
-void setup()
-{
-  Serial.begin(9600);
+                      void setup()
+                      {
+                        Serial.begin(9600);
 
-  pinMode(buttonUp, INPUT_PULLUP);  // Initializing buttonUp
-  pinMode(buttonDown, INPUT_PULLUP); // Initializing buttonDown
+                        pinMode(buttonUp, INPUT_PULLUP);  // Initializing buttonUp
+                        pinMode(buttonDown, INPUT_PULLUP); // Initializing buttonDown
 
-  stepper.setMaxSpeed(500); //Setting a Max Speed for the Stepper
-  stepper.setAcceleration(200); //Setting the Acceleration for the Stepper
-}
+                        stepper.setMaxSpeed(500); //Setting a Max Speed for the Stepper
+                        stepper.setAcceleration(200); //Setting the Acceleration for the Stepper
+                      }
 
-void loop()
-{
-  // Reading the Button Input
-  int valUp = digitalRead(buttonUp);  
-  int valDown = digitalRead(buttonDown);
+                      void loop()
+                      {
+                        // Reading the Button Input
+                        int valUp = digitalRead(buttonUp);  
+                        int valDown = digitalRead(buttonDown);
 
-  // If statements that read the button input and tells the Stepper to move up and down 50 steps.
-  if ((valUp == 0) && (stepper.distanceToGo() == 0))
-  {
-       stepper.moveTo(50);
-       stepper.runToPosition(); //The runToPosition() function is blocking
-    }
+                        // If statements that read the button input and tells the Stepper to move up and down 50 steps.
+                        if ((valUp == 0) && (stepper.distanceToGo() == 0))
+                        {
+                             stepper.moveTo(50);
+                             stepper.runToPosition(); //The runToPosition() function is blocking
+                          }
 
-  if ((valDown == 0) && (stepper.distanceToGo() == 0))
-  {
-       stepper.moveTo(-50);
-       stepper.runToPosition();
-    }
+                        if ((valDown == 0) && (stepper.distanceToGo() == 0))
+                        {
+                             stepper.moveTo(-50);
+                             stepper.runToPosition();
+                          }
 
-  // Reset the position to 0 so that when the button is pressed again, 
-  stepper.setCurrentPosition(0);
-}
+                        // Reset the position to 0 so that when the button is pressed again, 
+                        stepper.setCurrentPosition(0);
+                      }
                   </code>
                 </pre>
               </figure>
@@ -120,5 +122,64 @@ void loop()
 
 </br>
 
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-6">
+            <h3 class="center"> Holding the Cookie: </h3>
+            <p> To hold the cookie, I was able to use an alligator clip. To get the cookie far enough away for the motor shaft so it can be dipped into a glass of milk I was able to use a coat hanger and push it into some holds located on the motor shaft. After cutting and threading the alligator clip through another hole and tieing it to coat hanger I had a way to hold a cookie.  
+            </p>
+        </div>
+  <div class ="col-sm-4">
+       <figure> <img src="./coat_hanger.jpg" class="image" alt="The Completed Motor Shaft">
+        <figcaption class="center"> </figcaption>
+      </figure>
+  </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class ="col-sm-4">
+       <figure> <img src="./cookie_dialectric.jpg" class="image" alt="A Cookie as Dialectric">
+        <figcaption class="center"> </figcaption>
+      </figure>
+       <figure> <img src="./cookie_held.jpg" class="image" alt="Cookie Held Up">
+        <figcaption class="center"> </figcaption>
+      </figure>
+  </div>
+  <div class="col-sm-6">
+            <h3 class="center"> Finding when the cookie is saturated: </h3>
+            <p> At this point I once again hit a stopping point. I wasn't sure what else to do, but then I had to idea of creating a capacitor to measure if the cookie was saturated with milk. Essentially, my thought was the milk should move the part of cookie that wasn't submerged in milk. This would essentially change the dialectric between the two plates and a response should be seen. It took me a long time to figure out how to set up the sensor. Although we already did this, I think my biggest problem was I was trying to create my own, smaller plates and my connection for the wire to the plate wasn't bad. So after spending a long time figuring this out, I was actually able to measure if the capacitance changed when the cookie was wet. I found that when the cookie was saturated, the milk acted as a wire and the reading on the serial monitor was 4095. Although not quite what I was expecting I realize that this could work since th reading before hand was only around 600. So I added some plates to my cookie which were held on there by a clothes pin. This was before I realized that the connection was bad to the plates. To fix the bad connection I realized I don't actually need the plates and I could just puncture the cookie with the wires. This worked just as well since when the milk saturated the cookie it was like the wires were touching each other. Below you can see some videos of the cookie dipper working. 
+            </p>
+        </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class ="col-sm-5">
+       <figure> <iframe width="100%" height="350" src="https://www.youtube.com/embed/je4awitkS14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Dry vs Wet Cookie"></iframe>
+      </figure>
+       <figure> <iframe width="100%" height="350" src="https://www.youtube.com/embed/RMg9KJZBk1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Cookie Dip #2"></iframe>
+      </figure>
+  </div>
+  <div class ="col-sm-5">
+       <figure> <iframe width="100%" height="350" src="https://www.youtube.com/embed/Tck81fsYHR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Cookie Dip #1"></iframe>
+      </figure>
+       <figure> <iframe width="100%" height="350" src="https://www.youtube.com/embed/MfzSRIUbVHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Cookie Dip #3"></iframe>
+      </figure>
+  </div>
+  <div class="col-sm-1">
+  </div>
+</div>
 
 </body>
