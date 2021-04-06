@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<head>
+  <title>PHYSCI 70: Intro to Digital Fabrication </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="../styling.css" rel="stylesheet">
+  <link href="../hover_pictures.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<!-- Heading -->
+<div class="header_main">
+	<header>Week 10: Machine Building
+	</header>
+</div>
+
+<!-- Nav -->
+<div>
+	<nav><a href='../index.html'>Home</a></nav>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-6">
+            <h3 class="center"> In class/lab: </h3>
+            <p> During class and lab this week after setting up one of the motor shafts (since I didn't have the bearing for the other), I started to mess around with the limits of the accelstepper library. I took me a little while to figure out the units of the library and what each class tells the stepper to do. I still don't understand everything, like why the stepper would turn left and right when the commands were all in the positive direction (this might be because of the 1000 step max). Anyways, I need the stepper to spin fast for my final project so I was playing with 6 digit accelerations and speeds and seeing what the motor could handle before skipping steps. 
+            </p>
+        </div>
+  <div class ="col-sm-4">
+       <figure> <img src="./motor_shaft_complete" class="image" alt="The Completed Motor Shaft">
+        <figcaption class="center"> </figcaption>
+      </figure>
+  </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-10">
+            <h3 class="center"> Stepper Control: </h3>
+            <p> I was having trouble thinking of what I could do with the stepper motor. As I was walking around my housing thinking of linear motions I could replicate, I saw some cookies and thought about dipping them into milk. This was a linear motion and I figured I could make it work. So I knew I wanted the stepper motor to move up and down with the control of a button. So after hooking up two buttons so the Huzzah was receiving digital input, I made statements which made the motor move up and down depending on which button was pressed. The way I found was (while using the AccelStepper Library) to tell the stepper motor to move, then to call the "run" function. At first this posed a problem since I was also reseting what the stepper motor thought was position 0 that way my commands within my if statements could be static. My work around for this was to use a blocking function that way it could move fully before the setPosition command ran.
+            </p>
+        </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10">
+      <div style="width:100%;height:250px;line-height:3em;overflow:auto;padding:5px;">
+              <figure>
+                <figcaption class="center"> User Input Code:</figcaption>
+                <pre>
+                  <code>
+                      #include <AccelStepper.h>
+
+//Pins for the motor driver.
+const int stepPin = 13;
+const int dirPin = 12;
+
+// Definting my buttons
+const int buttonUp = 14;
+const int buttonDown = 15;
+
+// Defining a stepper and the pins it will use
+AccelStepper stepper(1, stepPin, dirPin);
+
+void setup()
+{
+  Serial.begin(9600);
+
+  pinMode(buttonUp, INPUT_PULLUP);  // Initializing buttonUp
+  pinMode(buttonDown, INPUT_PULLUP); // Initializing buttonDown
+
+  stepper.setMaxSpeed(500); //Setting a Max Speed for the Stepper
+  stepper.setAcceleration(200); //Setting the Acceleration for the Stepper
+}
+
+void loop()
+{
+  // Reading the Button Input
+  int valUp = digitalRead(buttonUp);  
+  int valDown = digitalRead(buttonDown);
+
+  // If statements that read the button input and tells the Stepper to move up and down 50 steps.
+  if ((valUp == 0) && (stepper.distanceToGo() == 0))
+  {
+       stepper.moveTo(50);
+       stepper.runToPosition(); //The runToPosition() function is blocking
+    }
+
+  if ((valDown == 0) && (stepper.distanceToGo() == 0))
+  {
+       stepper.moveTo(-50);
+       stepper.runToPosition();
+    }
+
+  // Reset the position to 0 so that when the button is pressed again, 
+  stepper.setCurrentPosition(0);
+}
+                  </code>
+                </pre>
+              </figure>
+            </div>
+          </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+
+</body>
