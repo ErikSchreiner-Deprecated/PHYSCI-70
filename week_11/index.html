@@ -20,7 +20,7 @@
 <body>
 
 
-<!-- <div class="header_main">
+<div class="header_main">
 	<header>Week 11: Computer Programming
 	</header>
 </div>
@@ -28,23 +28,235 @@
 
 <div>
 	<nav><a href='../index.html'>Home</a></nav>
-</div> -->
+</div>
 
-<!-- <div class="row">
+<div class="row">
   <div class="col-sm-1">
   </div>
   <div class="col-sm-6">
-            <h3 class="center"> Remote Server: </h3>
-            <p> This week I was able to successfully set up the firebase server. Although I was more interested in the other parts of this meek (mainly API's) I was able to work through the tutorials for firebase and get those to work. Below is just some gifs demostrating that.
-            </p>
+            <h3 class="center"> p5: </h3>
+            <p> This week I experimented with p5 and communication over the serial monitor. I had an idea for a 3D chess board linked to a online chess platform, but I quickly realized that was way to ambitious with the other work I had this week, so I decided to kepe it simple and go back create an etch-a-sketch. <a href = "https://itp.nyu.edu/physcomp/videos/videos-serial-communication/#Serial_to_p5js_in_binary">This</a> website and their videos on setting up p5 and comunicating to it was extremely useful. Additionally, I had to download <a href = "https://github.com/p5-serial/p5.serialport">this</a> library to use serial commands within p5 and <a href = "https://github.com/p5-serial/p5.serialcontrol/releases">this</a> application to bridge to serial connection.  </p>
         </div>
   <div class ="col-sm-4">
-       <figure> <img src="./firebase_image.jpg" class="image" alt="Firebase">
+<!--        <figure> <img src="" class="image" style="width=150%" alt="">
+        <figcaption class="center"> </figcaption>
+      </figure> -->
+  </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-6">
+            <h3 class="center"> The Serial Bridge: </h3>
+            <p> The first step was downloading the libraries I mentioned and getting the serial bridge app hooked up properly. This wasn't that hard. After downloading the app, all I had to do was run the program. Whithin the program it automatically searches for serial ports and a drop down bar lets you select which one you want to connect to.</p>
+        </div>
+  <div class ="col-sm-4">
+       <figure> <img src="./serial_bridge_gif.gif" class="image" alt="Serial Communication">
         <figcaption class="center"> </figcaption>
       </figure>
   </div>
     <div class="col-sm-1">
   </div>
 </div>
- -->
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+    <div class ="col-sm-4">
+       <figure> <img src="./circles_gif.gif" class="image" alt="p5 Circles">
+        <figcaption class="center"> </figcaption>
+      </figure>
+  </div>
+  <div class="col-sm-6">
+            <h3 class="center"> Inital Problems: </h3>
+            <p> Although very instuctive, I quickly ran into a problem while working through the video about "Serial to p5.js in binary." Essentially, in the p5 online editor, I was struggling to upload a file. All I could do was create a new, blank file. Since this file was the file I needed to run serial connection commands in p5, I decided maybe I could set up p5 locally and work from that.<a href = "https://p5js.org/get-started/">This</a> and <a href = "https://github.com/processing/p5.js/wiki/Local-server">this</a> website helped me through the initial p5 setup and local server setup respectly. As it suggested in the latter website, I installed <a href = "https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb/">this</a> web extension. I highly recommend this extension. I am currently using this to see my webpage before I commit to github and it is very convienent. Anyways, to test this I just tried to host one of the exmaple sketches and it worked!. </p>
+        </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+    <div class ="col-sm-4">
+       <figure> <img src="./p5_serial_communication_gif.gif" class="image" alt="p5 Circles">
+        <figcaption class="center"> </figcaption>
+      </figure>
+  </div>
+  <div class="col-sm-6">
+            <h3 class="center"> More Problems: </h3>
+            <p> So I knew that my local server was working properly since I was able to upload basic p5 sketches to it, but I couldn't get any of the serial bridge sketches to work. I then realized I had to edit the example sketches to represent my computer port. Although definitely something I did wrong, this still did not fix my problem. I think that the main problem was the necessesary library whose commands was being referenced was not actually incorporated within my sketch. After messing around with this alot I thought, well, maybe I can re-try the web version of p5. So, I went back to the web version, still couldn't upload the necessary file, so I just created a blank one found the necessary code from the downloaded library, copied it and downloaded it into my sketch. Although crude, this did work. </p>
+            <h3 class="center"> And Even More Problems: </h3>
+            <p> Now I was trying to get the online p5 site to conenct and read from the serial bridge. Using the video and the article that the video followed as a reference, I could not get to find and connect to my serial port. After, trying multiple example sketches, I noticed that on the Serial Bridge it gives an example sketch. For some reason this sketch worked fine, so I was just able to work off of that sketch.  </p>
+        </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+    <div class="col-sm-6">
+            <h3 class="center"> Playing with p5: </h3>
+            <p> Now that I had the serial control, I just strarted to play with p5. Although nothing crazy since geting the serial bridge took me longer than expected, you can see that I got a circle to interact with the arduino. Now to create a etch-a-sketch, I needed more inpurts. Luckily the link I shared before with the videos also had a video on multiple inputs. Once again, it was extremely helpful. Essentially, you can read the potentiometers (I also added button to reset the canvas), print the values to the serial monitor with a comma between them, then after p5 receives the values, you can split the values using the commas into an array, then call upon the values of the array can use the "int" function to change the strings into integers (since the sensor values come in with quotation marks). My main p5 sketch is below (along with my arduino sketch) and tried my best to explain what is happening within it. I did get the etch-a-sketch to work (roughly) and you see my attempt to create a house (note that the gif website had a time cap of 20 seconds). Overall, p5 is pretty cool, I wish I had more time to work with p5 and other visualization programs expecially three.js (which I plan to learn).</p>
+        </div>
+    <div class ="col-sm-4">
+       <figure> <img src="./growing_circle_gif.gif" class="image" alt="Growing Circle">
+        <figcaption class="center"> </figcaption>
+      </figure>
+
+      </br>
+      </br>
+
+      <figure> <img src="./house_gif.gif" class="image" alt="Etch-A-Sketch">
+        <figcaption class="center"> </figcaption>
+      </figure>
+  </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10">
+      <div style="width:100%;height:250px;line-height:3em;overflow:auto;padding:5px;">
+              <figure>
+                <figcaption class="center"> Arduino Code:</figcaption>
+                <pre>
+                  <code>
+                      int potOne = A0;
+                      int potTwo = A1;
+                      int button = 13;
+
+                      void setup() {
+                        Serial.begin(9600);
+                        pinMode(potOne, INPUT);
+                        pinMode(potTwo, INPUT);
+                        pinMode(button, INPUT_PULLUP);
+
+                      }
+
+                      void loop() {
+                        int valOne = analogRead(potOne);
+                        delay(1);
+                        int valTwo = analogRead(potTwo);
+                        delay(1);
+                        int valButton = digitalRead(button);
+                        delay(1);
+                        Serial.print(valOne);
+                        Serial.print(",");
+                        Serial.print(valTwo);
+                        Serial.print(",");
+                        Serial.println(valButton);
+                      }
+                  </code>
+                </pre>
+              </figure>
+            </div>
+      <div style="width:100%;height:250px;line-height:3em;overflow:auto;padding:5px;">
+              <figure>
+                <figcaption class="center"> p5 Code:</figcaption>
+                <pre>
+                  <code>
+                      let serial;                           //Variable for serial hookup
+                      let latestData = "waiting for data";  //Variable for incoming data
+                      let xPos = 0;                         //Variable for pot 1 input
+                      let yPos = 0;                         //Variable for pot 2 input
+                      let button = 1;                       //Variable for button input
+
+
+                      function setup() {
+                       createCanvas(4095/10, 4095/10);    //Create Canvas
+
+                      //For Connecting to Serial Port
+                       serial = new p5.SerialPort();
+                       serial.list();
+                       serial.open('COM8');           //Connect to Serial Port (Mine is COM8, it would have to be changed for different device)
+                       serial.on('connected', serverConnected);
+                       serial.on('list', gotList);
+                       serial.on('data', gotData);
+                       serial.on('error', gotError);
+                       serial.on('open', gotOpen);
+                       serial.on('close', gotClose);
+                      }
+
+                      //Function for recieving the data
+                      function gotData() {
+                       let currentString = serial.readLine();
+                        trim(currentString);
+                       if (!currentString) return;
+                       console.log(currentString);
+                       latestData = currentString;
+                        var sensors = split(currentString, ","); //Split the string called currentstring using the commas
+                        if (sensors.length > 2){                 //If we are actually getting 3 inputs like we expect;
+                          xPos = int(sensors[0]);                //Store potOne data as xPos
+                          yPos = int(sensors[1]);                //Store potTwo data as yPos
+                          button = int(sensors[2]);              //Store button data as button
+                        }
+                      }
+
+
+                      function draw() {
+                        let c = color('magenta');       //Define a color
+                        fill(c);                        //Fill the circle with the color
+                        circle(xPos/10, yPos/10, 10);   //Move the circle depending on the sensor reading              
+
+                        if (button == 0) {
+                          clear();                      //When button is hit clear the screen 
+                          background('#c6e2ff');
+                        }
+                      }
+
+
+                      //Functions for serial connection 
+                      function serverConnected() {
+                       print("Connected to Server");
+                      }
+
+                      function gotList(thelist) {
+                       print("List of Serial Ports:");
+
+                       for (let i = 0; i < thelist.length; i++) {
+                        print(i + " " + thelist[i]);
+                       }
+                      }
+
+                      function gotOpen() {
+                       print("Serial Port is Open");
+                      }
+
+                      function gotClose(){
+                       print("Serial Port is Closed");
+                       latestData = "Serial Port is Closed";
+                      }
+
+                      function gotError(theerror) {
+                       print(theerror);
+                      }
+
+
+
+                  </code>
+                </pre>
+              </figure>
+            </div>
+          </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
 </body>
