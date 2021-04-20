@@ -28,12 +28,31 @@
   <div class="col-sm-1">
   </div>
   <div class="col-sm-6">
-            <h3 class="center"> Final Project Progress: </h3>
+            <h3 class="center"> Week 11: </h3>
             <p> Since I have already played with the light sensors and the stepper motor, the main part of the prject that I haven't explored is the arduino to MIDI functionallity. I looked at that a bit more this week. I have seen and remembered JuHye also mentioning this Hairless to MIDI input. I downloaded and played a little with that but haven't made much progress with actual transfer of data. I believe the data type I was sending was wrong.
             </p>
         </div>
   <div class ="col-sm-4">
        <figure> <img src="./hairless.jpg" class="image" alt="The Completed Motor Shaft">
+        <figcaption class="center"> </figcaption>
+      </figure>
+  </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-6">
+            <h3 class="center"> Week 12: </h3>
+            <p> I focused mainly on getting the hairless Midi to work. After downloading <a href = "https://coolsoft.altervista.org/en/virtualmidisynth">this</a> virtual synth and reading a about midi data types and the arduino library "Arduino MIDI Library," I spent some time trying to get the huzzah to actually sent data through the serial monitor. I first had to download a "soundfont" which had a bunch of instuments programmed into it that the virtual synth will choose from depending on the number I sent through the serial. I stuggled for a while because I have two monitors and I had the output set to my monitor speaker which was turned all the way down. After figured out that problem, I was able to get it to work and I figured out by looking into the MIDI library to change the note I can use the line of code "MIDI.sendPitchBend(frequency, channel);" So, after figuring this out I essentially have all parts of my final project and I had to put everything together and create a case for it.
+            </p>
+        </div>
+  <div class ="col-sm-4">
+       <figure> <img src="./midi.jpg" class="image" alt="Midi">
         <figcaption class="center"> </figcaption>
       </figure>
   </div>
