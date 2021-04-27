@@ -60,5 +60,133 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-10">
+            <h3 class="center"> Week 13: </h3>
+            <p> The past week I've been mainly working on the coding for the laser harp. I am just trying to put everyhting together at this point. I managed to code a automatic sensor calibrator which will record the light on start up or on reset. Then I've been working mainly on getting the notes to have a small delay, because currently when they play it plays multiple notes in a second since the code is excuting the noteOn line as fast as the code is running. I also have thought of the way to distinguish between each notes. I realized I can use the mod function to get what beam is active since each beam is controlled through a millis() timer. For example, suppose I make 3 beams (so one laser flashes 3 times before returning to the origional beam, making it appear like 3 separate beams). Lets say the beams are on for 1000 ms and off for a negligible amount of time. Then millis() mod 3000 will give me a number in the set [0,3). The numbers in the set [0, 1) would correspond with the time of the first beam, [1, 2) for the second beam, and [2,3) for the third beam. Therefore if the millis() mod 3000 has a reading of 1.6 when the light sensor goes over the threshold set by the automatic calibrator, it means beam 2 was broken and I can make that play a note associated with that beam. And, although not done, I've included what I have now which plays a note when the light sensor goes over the threshold set by the calibrate function. And below is my bill of materials:
+            </p>
+            <ol>
+              <li> Microcontroller</li>
+              <li> Analog Light Sensor</li>
+              <li> Laser</li>
+              <li> Stepper Motor</li>
+              <li> External Battery Pack</li>
+              <li> Computer with necessary software (ability to send midi data)</li>
+              <li> Small Mirror</li>
+              <li> Wires</li>
+              <li> Ultra Sonic Range Finder</li>
+            </ol>
+        </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10">
+            <div style="width:100%;height:500px;line-height:3em;overflow:auto;padding:5px;">
+              <figure>
+                <figcaption class="center"> Arduino Code: Playing Sound When Light Threshold is Broken</figcaption>
+                <pre>
+                  <code>
+                      class Sound 
+                        {
+                          int averageLight = 0;
+                          int lightLevel;
+                          int value;
+
+                          int sensorPin;
+                          int instrument;
+                          int volume;
+                          int channel;
+                          int freq1;
+                          int freq2;
+                          int freq3;
+                          int freq4;
+                          int freq5;
+                          int freq6;
+                          int freq7;
+                          int freq8;
+                          int freq9;
+                          int noteTime;
+                          unsigned long resetMillis = 0;
+                          
+                          public:
+                          Sound(int sensorPin_input, int instrument_input, int volume_input, int channel_input, int timeNoteOn, int freq1_input, int freq2_input, int freq3_input, int freq4_input, int freq5_input, int freq6_input, int freq7_input, int freq8_input, int freq9_input)   //Volume = 0-127
+                          {
+                            
+                          sensorPin = sensorPin_input;
+                          instrument = instrument_input;
+                          volume = volume_input;
+                          channel = channel_input;
+                          freq1 = freq1_input;
+                          freq2 = freq2_input;
+                          freq3 = freq3_input;
+                          freq4 = freq4_input;
+                          freq5 = freq5_input;
+                          freq6 = freq6_input;
+                          freq7 = freq7_input;
+                          freq8 = freq8_input;
+                          freq9 = freq9_input;
+                          noteTime = timeNoteOn;
+
+                          pinMode(sensorPin, INPUT);
+                              
+                          }
+
+                          void Calibrate()
+                          {
+                            
+                            if (millis()<15000) {
+                              for(int i; i<100; i++)
+                                {
+                                  averageLight = averageLight + analogRead(sensorPin);
+                                  delay(10);
+                                }
+                              lightLevel = averageLight/100;
+
+                        //     Serial.print(lightLevel);
+                        //     Serial.print("\t");
+                        //     Serial.print(averageLight);
+                        //     Serial.print("\t");
+                            }
+                          }
+
+                          void Update()
+                          {
+                            unsigned long Millis = millis();
+                            
+                            value = analogRead(sensorPin);
+                        //    Serial.println(value);
+
+                            int playLightLevel = lightLevel + (lightLevel/4);
+                        //    Serial.println(playLightLevel);
+                             
+                            if (value > playLightLevel && Millis - resetMillis >= noteTime)
+                            {
+                            MIDI.sendNoteOn(instrument, volume, channel); 
+                            MIDI.sendPitchBend(freq1, channel);
+                            resetMillis = Millis;
+                            }
+                            else 
+                            {
+                            MIDI.sendNoteOff(instrument, 0, channel);
+                            }
+                          }
+                        };
+                  </code>
+                </pre>
+              </figure>
+            </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+
 
 </body>
