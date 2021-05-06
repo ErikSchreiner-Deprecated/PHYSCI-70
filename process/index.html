@@ -60,6 +60,8 @@
   </div>
 </div>
 
+</br>
+
 <div class="row">
   <div class="col-sm-1">
   </div>
@@ -183,10 +185,111 @@
                 </pre>
               </figure>
             </div>
+          </div>
     <div class="col-sm-1">
   </div>
 </div>
 
+</br>
 
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-6">
+            <h3 class="center"> Week 14: </h3>
+            <p> My final project has been taking a little longer than hoped. I thought it would be pretty simple to integrate all the part together bit I found that I am very bad at stepper motor control. After reaching out and recieving some starter code from Nathan I had something that would rotate one way to many how many beams was desired. But, I wasn't it to rtate back and forth to help reach persistance of vision. After editing the code in a way I thought would help spin the motor both directions, I was stumped when after behaving for a short amount of time the motor just spun in circles. I just thought I was doing something wrong but after reaching out to Nathan again it seemed as if my code was okay.I hopped into office hours to see if we could get to the bottom of this and we found that in order to spin backwards, the function "setSpeed" must be negative. In hindsight, this still isn't clear to why this should be this way. Speed should only be speed and not direction. It would be more clear if the function was called setVelocity, since velocity consists of both speed and direction. Regardless, it works now and I found that if I turn the time the laser is on to 5 milliseconds, the beam still shows up and the speed I set does not matter. In the code below the speed is set to 25000 and it works reliably, but as soon as I change the delay to 10 milliseconds the motor skips a lot of steps. The delay must essentially be so negligable it is almost like the motor doesn't stop. 
+            </p>
+        </div>
+    <div class="col-sm-4">
+             <figure> <iframe width="100%" height="360" src="https://www.youtube.com/embed/-5_9myJNX0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="motor spinning"></iframe>
+      </figure>
+    </div>
+    <div class="col-sm-1">
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10">
+            <div style="width:100%;height:500px;line-height:3em;overflow:auto;padding:5px;">
+              <figure>
+                <figcaption class="center"> Arduino Code:</figcaption>
+                <pre>
+                  <code>
+                    #include <AccelStepper.h>
+                    const int stepPin = 12;  // orange
+                    const int dirPin = 27; 
+                    const int waitTime = 5; // how long to stay at each position (milliseconds)
+                    const int numSegments = 8; // how many beams to create
+                    const int stepsPerSegment = 10; // distance between beams
+                    int prevMillis;
+                    int n = 0;
+                    int m = 0;
+
+                    // Defining a stepper and the pins it will use
+                    AccelStepper stepper(1, stepPin, dirPin);
+
+                    void setup()
+                    {
+                      pinMode(13, OUTPUT);
+                      stepper.setMaxSpeed(25000); // working for me at 9V when waitTime = 5
+                      stepper.setAcceleration(50000);
+                      Serial.begin(115200);
+                    }
+
+                    // The loop below runs the first "if" function until n hits the number of desired beams
+                    // After that, it runs the second "if" function until m goes from the number of desired beams to 0
+                    // Then, it repeats.
+
+                    void loop()
+                    {
+                      if (n != numSegments) {
+                        if (stepper.distanceToGo() == 0) {
+                          digitalWrite(13, HIGH); // turn on laser
+                          delay(waitTime);
+                          digitalWrite(13, LOW); // turn off laser
+                          n++;
+                          if (n == numSegments) {
+                            m = numSegments;
+                          }
+                          stepper.moveTo(n * stepsPerSegment);
+                          stepper.setSpeed(25000); // this is needed to avoid accelerations
+                        }
+                      }
+
+
+                      if (n == numSegments) {
+                        if (stepper.distanceToGo() == 0) {
+                          digitalWrite(13, HIGH); // turn on laser
+                          delay(waitTime);
+                          digitalWrite(13, LOW); // turn off laser
+                          m--;
+                          if (m == 0) {
+                            n = 0;
+                          }
+                          stepper.moveTo(m * stepsPerSegment);
+                          stepper.setSpeed(-25000); // this is needed to avoid accelerations
+                        }
+                      }
+                      stepper.runSpeed();
+
+                      Serial.println(stepper.currentPosition());
+                      Serial.println(stepper.distanceToGo());
+                      Serial.print("n= ");
+                      Serial.println(n);
+                      Serial.print("m= ");
+                      Serial.println(m);
+                    }
+                  </code>
+                </pre>
+              </figure>
+            </div>
+          </div>
+    <div class="col-sm-1">
+  </div>
+</div>
 
 </body>
