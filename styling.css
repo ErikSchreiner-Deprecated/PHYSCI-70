@@ -1,56 +1,60 @@
 header {
-	padding: 50px;
-	background-color: #f2dede;
+	padding: 40px;
+	background-color: #465775;
 }
 
 .header_main{
 	font-size: 250%;
-	color: blueviolet;
+	color: #FFE066;
 	text-align: center;
-	font-family: Impact, fantasy;
+	font-family: Arial, Sans-serif;
 }
 
 nav {
 	margin-bottom: 15px;
 	padding: 7px;
-	background-color: #a0d1fc;
+	background-color: #59C9A5;
 	font-size: 115%;
 	color: black;
 	text-align: right;
 }
 
 .background{
-	background-color: beige;
+	background-color: #FAF6F6;
+}
+
+body{
+	background-color: #EFFBFF;
 }
 
 h4 {
-	color: blue;
-	font-family: Impact, fantasy;
+	color: #9E0059;
+	font-family: Arial, Sans-serif;
 	font-size: 150%;
 }
 
 h3 {
-	color: blueviolet;
-	font-family: Impact, fantasy;
+	color: #9E0059;
+	font-family: Arial, Sans-serif;
 	font-size: 200%;
 	text-align: center;
 }
 
 h2 {
-	color: red;
+	color: #9E0059;
 	font-size: 200%;
 	text-align: center;
 }
 
 p {
 	color: black;
-	font-family: courier new, monospace;
+	font-family: Arial, Sans-serif;
 	font-size: large;
 }
 
 ul {
 	color: black;
-	font-family: courier new, monospace;
+	font-family: Arial, Sans-serif;
 	font-size: medium;
 }
 
@@ -61,11 +65,11 @@ ul {
 
 /*A link*/
 a:link {
-    color: blue;
+    color: #1446A0;
 }
 /* A link that has been visited */
 a:visited {
-    color: blue;
+    color: #1446A0;
 }
 /* A link that is hovered on */
 a:hover {
@@ -78,6 +82,7 @@ a:active {
 
 .image{
 	max-width: 100%;
+	padding-bottom: 20px;
 }
 
 .center{
@@ -85,7 +90,7 @@ a:active {
 }
 
 pre, code {
-  font-family: monospace, monospace;
+  font-family: Sans-serif, Sans-serif;
 }
 pre {
   overflow: auto;
