@@ -29,9 +29,9 @@
   </div>
   <div class="col-sm-6">
             <h3 class="center"> I broke my Metro: </h3>
-            <p> This week I broke my metro. Not sure what I did exactly (I have a few ideas), but it seems to over heat within a few minute of being plugged in and the port is not registering. But I have an UNO... that I don't have a plug for where I am currently. So the work I did the week consisted mainly of the huzzah as the main microcontroller and after a few workarounds everything worked out.  
+             <p> This week I broke my metro. Not sure what I did exactly (I have a few ideas), but it seems to overheat within a few minutes of being plugged in and the port is not registering. But I have a UNO... that I don't have a plug for where I am currently. So the work I did the week consisted mainly of the huzzah as the main microcontroller and after a few workarounds everything worked out.  
             </p>
-        </div>
+          </div>
     <div class="col-sm-4">
       <figure> <img src="./broken_metro.jpg" class="image" alt="Broken Metro Code">
         <figcaption class="center"> </figcaption>
@@ -52,12 +52,12 @@
       </figure>
     </div>
     <div class="col-sm-6">
-            <h3 class="center"> Input and Output Devices: </h3>
+             <h3 class="center"> Input and Output Devices: </h3>
             <h4 class =" center"> Laser: </h4>
-            <p> Besides the little hiccup with the metro, this week was pretty productive for me. I started to try to get an idea of how my final project will work out. I started by placing aligator clips on my laser so I can control when my laser turns on and off. This also allows me to connect it to an external battery pack. It took me a little while to figure out how exactly to control the laser using the microcontroller using a transistor, but with a suggestion from Nathan I found an example of a motor being run with a transistor and I was ale to receate the circuit with a laser instead of a motor. Although not terribly important for what I did the rest of this week, the flashing of the laser is going to be vital for my final project and having the correct timings. 
+            <p> Besides the little hiccup with the metro, this week was pretty productive for me. I started to try to get an idea of how my final project will work out. I started by placing alligator clips on my laser so I can control when my laser turns on and off. This also allows me to connect it to an external battery pack. It took me a little while to figure out how exactly to control the laser using the microcontroller using a transistor, but with a suggestion from Nathan, I found an example of a motor being run with a transistor and I was able to recreate the circuit with a laser instead of a motor. Although not important for what I did the rest of this week, the flashing of the laser is going to be vital for my final project and having the correct timings. 
             </p>
-            <P> After getting the laser to hook up I went back to the "Mulitasking with Arduino" tutorial and was able to pull their class for blinking the LED without the use of the delay function. I changed very little since it was essentially all I needed. What I have within the Arduino program can be seen below.
-            </P>
+            <P> After getting the laser to hook up I went back to the "Multitasking with Arduino" tutorial and was able to pull their class for blinking the LED without the use of the delay function. I changed very little since it was essentially all I needed. What I have within the Arduino program can be seen below.
+            </p>
         </div>
     <div class="col-sm-1">
   </div>
@@ -135,13 +135,12 @@
     </div>
     <div class="col-sm-6">
             <h4 class =" center"> Light Sensor + Peizo: </h4>
-            <p> My plan was to use the laser, make the light hit a light sensor, which would then tell a buzzer (since I don't have a MIDI jack to make sounds with my conputer) to play a sound. I realized fast that making a peizo play using the Huzzah was a little more elaborate than using the metro. The Huzzah does not support arduino's 'Tone' function. There is a workaround for this though the use of different commands (which you can see below). Essentially, from my understanding, the peizo is treated similar to a LED which we send a Pulse Width Modulation signal though. I ended up getting the buzzer to play so I then started to work on interfacing the light sensor with it.
+            <p> I planned to use the laser, make the light hit a light sensor, which would then tell a buzzer (since I don't have a MIDI jack to make sounds with my computer) to play a sound. I realized fast that making a piezo play using the Huzzah was a little more elaborate than using the metro. The Huzzah does not support Arduino's 'Tone' function. There is a workaround for this through the use of different commands (which you can see below). Essentially, from my understanding, the piezo is treated similarly to a LED which we send a Pulse Width Modulation signal through. I ended up getting the buzzer to play so I then started to work on interfacing the light sensor with it.
             </p>
-            <p> Within the class I made for the buzzer I essentially used analogRead to map the light level the sensor was experiencing to a variable "value." This then allowed me to say, "if value > (about the light level in the room at the time + some), then make noise. Else, don't make noise." This works fine since the light that is redirected from the laser to the sensor usually has a significant change. You can think of this as the ambient light temperature being the ground state or 0-point, and every time enough diffuse light from the laser hit the sensor it 'jumps' away from this ground state and if there is enough light it 'jumps' through the ceiling. The 'breaking' of this ceiling is what tells the buzzer to play. One downside of this that I see is that I have to adjust the sensor to different light levels. I am thinking of a way to change this so it knows automatically and calibrate isn't very necessary.
+            <p> Within the class I made for the buzzer I essentially used analogRead to map the light level the sensor was experiencing to a variable "value." This then allowed me to say, "if value > (about the light level in the room at the time + some), then make noise. Else, don't make noise." This works fine since the light that is redirected from the laser to the sensor usually has a significant change. You can think of this as the ambient light temperature being the ground state or 0-point, and every time enough diffuse light from the laser hits the sensor it 'jumps' away from this ground state and if there is enough light it 'jumps' through the ceiling. The 'breaking' of this ceiling is what tells the buzzer to play. One downside of this that I see is that I have to adjust the sensor to different light levels. I am thinking of a way to change this so it knows automatically and calibrates isn't very necessary.
             </p>
-            <p>I then combing the wirings and then the code into the same program and uploaded it onto the Huzzah. The circiutry can be seen on the left.
-            </p>
-        </div>
+            <p>I then combing the wirings and then the code into the same program and uploaded it onto the Huzzah. The circuitry can be seen on the left.
+            </p>        </div>
     <div class="col-sm-1">
   </div>
 </div>
@@ -212,7 +211,7 @@
   </div>
     <div class="col-sm-6">
             <h4 class =" center"> Final Product: </h4>
-            <p> Although my class for the laser does not do much, the final code can be seen below. To the right you can see a video of the final product and how the sensor behaves when it is covered (fully and partly) and how the sensor has a strong response to the laser light.
+            <p> Although my class for the laser does not do much, the final code can be seen below. To the right, you can see a video of the final product and how the sensor behaves when it is covered (fully and partly) and how the sensor has a strong response to the laser light.
             </p>
   </div>
   <div class="col-sm-4">
@@ -265,7 +264,7 @@
   </div>
     <div class="col-sm-6">
             <h3 class="center"> Final Project 3D models: </h3>
-            <p> I also got a better idea of what I need for my 3D models. The laser needs to be held with a clothespin to hit the button and complete the circuit, so I figured that I need something to hold the clothespin and laser and then I need something to mount the stepper motor on so that when it is spinning back and forth to project the laser it doesn't shift. Both these models can be seen below in what how I expect the final configuration be set up. The clothespin was uploaded in and I had to scale it myself and 'press-it' so it looks weird but the gist is there.
+            <p> I also got a better idea of what I need for my 3D models. The laser needs to be held with a clothespin to hit the button and complete the circuit. Therefore, I figured that I need something to hold the clothespin and laser and then I need something to mount the stepper motor on. That way when it is spinning back and forth to project the laser it doesn't shift. Both these models can be seen below in how I expect the final configuration to be set up. The clothespin was uploaded in and I had to scale it myself and 'press it so it looks weird but the gist is there.
             </p>
     </div>
     <div class="col-sm-4">
@@ -301,10 +300,10 @@
     <div class="col-sm-6">
             <h3 class="center"> Miscellaneous: </h3>
             <h4 class="center"> Stepper Motor </h4>
-            <p> Besides breaking my metro, playing around with lasers and the piezo, and creating some 3D models, I also tinkered with the stepper. I was hoping to add that into my system for this week but I had some problems. The first and biggest problem was completely my own fault since I missed the fact we had a stepper driver in the kit. I realized this after some time trying to get the stepper to turn with no such luck. After I realized we had the driver,  
+            <p> Besides breaking my metro, playing around with lasers and the piezo, and creating some 3D models, I also tinkered with the stepper. I was hoping to add that into my system for this week but I had some problems. The first and biggest problem was completely my fault since I missed the fact we had a stepper driver in the kit. I realized this after some time trying to get the stepper to turn with no such luck. After I realized we had the driver,  
             </p>
             <h4 class="center"> Huzzah and ESP-32 CAM</h4>
-            <p> Although I didn't really know how to show it effectively, I did get the huzzah to control a led through my browser. I also, got the ESP 32 CAM to work after some tinkering. A photo can be seen of that. 
+            <p> Although I didn't know how to show it effectively, I did get the huzzah to control a led through my browser. I also, got the ESP 32 CAM to work after some tinkering. A photo can be seen of that. 
             </p>
 
     </div>
