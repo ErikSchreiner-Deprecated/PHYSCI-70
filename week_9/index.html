@@ -29,9 +29,8 @@
   </div>
   <div class="col-sm-6">
             <h3 class="center"> Remote Server: </h3>
-            <p> This week I was able to successfully set up the firebase server. Although I was more interested in the other parts of this meek (mainly API's) I was able to work through the tutorials for firebase and get those to work. Below is just some gifs demostrating that.
-            </p>
-        </div>
+            <p> This week I was able to successfully set up the firebase server. Although I was more interested in the other parts of this meek (mainly API's) I was able to work through the tutorials for firebase and get those to work. Below is just some gifs demonstrating that.
+            </p>        </div>
   <div class ="col-sm-4">
        <figure> <img src="./firebase_image.jpg" class="image" alt="Firebase">
         <figcaption class="center"> </figcaption>
@@ -72,7 +71,7 @@
   </div>
   <div class="col-sm-6">
             <h3 class="center"> Bluetooth: </h3>
-            <p> Similiarly to firebase, I didn't spend that long on the bluetooth. But, once again, I was able to set up the basic code. I also played around with the NeoPixel light strip for a bit, since I notices that they had examples for BLE included within thier library. But, it appeared as if those examples weren't made for the ESP32 so they would not upload. I then tried to just integrate the light strip into the code provided, but it wasn't appearing to working and I didn't have that much time to spend on it.
+            <p> Similarly to firebase, I didn't spend that long on the Bluetooth. But, once again, I was able to set up the basic code. I also played around with the NeoPixel light strip for a bit, since I notice that they had examples for BLE included within their library. But, it appeared as if those examples weren't made for the ESP32 so they would not upload. I then tried to just integrate the light strip into the code provided, but it wasn't appearing to work and I didn't have that much time to spend on it.
             </p>
         </div>
     <div class="col-sm-1">
@@ -91,7 +90,7 @@
   </div>
   <div class="col-sm-6">
             <h3 class="center"> API and Webscraping: </h3>
-            <p> Like bluetooth and the remote server, I was able to set up the example code. I was much more interested in the prospect of webscraping and being able to pull whatever you want. When I was browsing one of the links explaining all the different API's that are out there, I was grabbed by gmail's api. I was interested in setting up an automatic email that I could send to a few of my friend that automatically changed what was in the body of the email. I was thinking at first I could use another API (like <a href="https://shibe.online/">this dog one</a>) to be the body of the email. Although, gmail's <a hraf="https://developers.google.com/gmail/api/guides/sending">website</a> was a little confusing to me for setting up an API. They had different options for what you were coding in, but I was not sure what exactly would work in arduino since I didn't see C++. So, instead of working through something that might not work I started googling other options.
+            <p> Like Bluetooth and the remote server, I was able to set up the example code. I was much more interested in the prospect of web scraping and being able to pull whatever you want. When I was browsing one of the links explaining all the different APIs that are out there, I was grabbed by Gmail's API. I was interested in setting up an automatic email that I could send to a few of my friends that automatically changed what was in the body of the email. I was thinking at first I could use another API (like <a href="https://shibe.online/">this dog one</a>) to be the body of the email. Although, Gmail's <a hraf="https://developers.google.com/gmail/api/guides/sending">website</a> was a little confusing to me for setting up an API. They had different options for what you were coding in, but I was not sure what exactly would work in Arduino since I didn't see C++. So, instead of working through something that might not work, I started googling other options.
             </p>
         </div>
     <div class="col-sm-1">
@@ -105,7 +104,7 @@
   </div>
   <div class="col-sm-6">
             <h3 class="center"> API and Webscraping Cont.: </h3>
-            <p> I made a mistake at first googling other options for "arduino." Although I'm sure the options I found could of worked, after downloading a library from github which was lacking in a full explaination to use (if not using gmail), I re-googled sending an email with a <b>ESP32</b>. I instantly saw a <a hraf="https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/#:~:text=SMTP%20means%20Simple%20Mail%20Transfer%20Protocol%20and%20it,or%20without%20attachment%20via%20SMTP%20and%20IMAP%20servers.">Random Nerd Tutorial</a> and figured it would be very useful. It was. The first thing it suggests is to create a new email because your email can be blocked if you accidently send to much. This was good to know. So after creating a new email, I was able to just follow along with that tutorial which was very intuitive and was able to send an email to myself. 
+            <p> I made a mistake at first googling other options for "Arduino." Although I'm sure the options I found could have worked, after downloading a library from GitHub which was lacking in a full explanation to use (if not using Gmail), I re-googled sending an email with an <b>ESP32</b>. I instantly saw a <a hraf="https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/#:~:text=SMTP%20means%20Simple%20Mail%20Transfer%20Protocol%20and%20it,or%20without%20attachment%20via%20SMTP%20and%20IMAP%20servers.">Random Nerd Tutorial</a> and figured it would be very useful. It was. The first thing it suggests is to create a new email because your email can be blocked if you accidentally send too much. This was good to know. So after creating a new email, I was able to just follow along with that tutorial which was very intuitive, and was able to send an email to myself. 
             </p>
   </div>
       <div class ="col-sm-4">
@@ -171,7 +170,7 @@
   </div>
   <div class="col-sm-6">
             <h3 class="center"> API and Webscraping Cont.: </h3>
-            <p> Now that I could send emails and had dog pictures, I just had to get them to work together. This, I sadly could not do. I could not get the link that was given to me from the dog API into the subject of the email. I tried to instead find a way to download the link through the serial monitor and then attach it to the email as a .txt file. After a good amount of googling and more time playing with puTTY, I was able get the puTTy so save what was in the serial monitor. But, more was printing into the serial monitor than I wanted and I had to run puTTy myself to get it to save the monitor, which defeated the point of automating this. So I was not able to get an automatic email that would send dog pictures :(
+            <p> Now that I could send emails and had dog pictures, I just had to get them to work together. This, I sadly could not do. I could not get the link that was given to me from the dog API into the subject of the email. I tried to instead find a way to download the link through the serial monitor and then attach it to the email as a .txt file. After a good amount of googling and more time playing with puTTY, I was able to get the puTTy to save what was in the serial monitor. But, more was printing into the serial monitor than I wanted and I had to run puTTy myself to get it to save the monitor, which defeated the point of automating this. So I was not able to get an automatic email that would send dog pictures :(
             </p>
         </div>
   </div>
